@@ -1,0 +1,8 @@
+{
+  "name": "tribeca-registry",
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "@saberhq/solana-contrib": "^1.12.9",
+    "@solana/web3.js": "^1.31.0"
+  }
+}

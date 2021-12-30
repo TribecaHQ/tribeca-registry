@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "lib": ["esnext"],
+    "noFallthroughCasesInSwitch": true,
+
+    "declaration": true,
+    "removeComments": false,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist/"
+  },
+  "include": ["./src/", "./data"]
+}
