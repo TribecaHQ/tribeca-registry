@@ -34,7 +34,6 @@ jobs:
           if [ "$(git diff-index HEAD)" != '' ]; then
             git config user.name "GitHub Actions"
             git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-            rm -rf ./data/solana-token-list.json
             git add .
             git commit -m "Update registry"
             git push origin HEAD
