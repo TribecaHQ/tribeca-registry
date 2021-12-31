@@ -1,11 +1,11 @@
 import { promises } from "fs";
 
 import mainnetGovernorConfigsJSON from "../config/governors-list.mainnet.json";
-import { GovernorConfig, GovernorMeta } from "../config/types";
+import type { GovernorConfig, GovernorMeta } from "../config/types";
 import { getGovTokenInfo } from "../utils/getTokenInfo";
 import { stableStringify } from "../utils/serialize";
 
-const buildGovernorLists = async () => {
+const buildGovernorMetas = async () => {
   const mainnetGovernorConfigs: GovernorConfig[] = mainnetGovernorConfigsJSON;
   const mainnetGovernors = mainnetGovernorConfigs.map((cfg) => {
     const token = getGovTokenInfo(cfg.govTokenMint, "mainnet-beta");
@@ -29,7 +29,7 @@ const buildGovernorLists = async () => {
   // TODO(michael): Generate devnet governor metas
 };
 
-buildGovernorLists()
+buildGovernorMetas()
   .then()
   .catch((err) => {
     console.error(err);
