@@ -2,7 +2,7 @@ import type { Network } from "@saberhq/solana-contrib";
 import type { TokenInfo } from "@saberhq/token-utils";
 import { networkToChainId } from "@saberhq/token-utils";
 
-import solanaTokenList from "../../data/solana-token-list.json";
+import solanaTokenList from "../../solana-token-list.json";
 
 export const getGovTokenInfo = (
   address: string,

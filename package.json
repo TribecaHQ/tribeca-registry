@@ -25,7 +25,7 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
-    "build": "npm run generate && eslint . --fix --cache && prettier --write data/*.json",
+    "build": "npm run generate && eslint . --fix --cache && prettier --write data/registry/*.json",
     "generate": "mkdir -p data/registry && npm run generate:solana-token-list && npm run generate:governor-metas",
     "generate:solana-token-list": "ts-node src/scripts/generateTokenList.ts",
     "generate:governor-metas": "ts-node src/scripts/generateGovernorMetas.ts",

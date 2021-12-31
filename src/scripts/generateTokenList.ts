@@ -9,7 +9,7 @@ import { stableStringify } from "../utils/serialize";
 const fetchTokens = async (): Promise<void> => {
   const allTokens = await new GitHubTokenListResolutionStrategy().resolve();
   fs.writeFileSync(
-    `${__dirname}/../../data/solana-token-list.json`,
+    `${__dirname}/../../solana-token-list.json`,
     stableStringify(allTokens)
   );
 };
