@@ -17,7 +17,9 @@
     "eslint": "^8.5.0",
     "eslint-import-resolver-node": "^0.3.6",
     "fast-json-stable-stringify": "^2.1.0",
+    "husky": "^7.0.4",
     "jsbi": "^4.1.0",
+    "lint-staged": "^12.1.4",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
@@ -26,6 +28,13 @@
     "build": "npm run generate && eslint . --fix --cache && prettier --write data/*.json",
     "generate": "mkdir -p data/ && npm run generate:solana-token-list && npm run generate:governor-metas",
     "generate:solana-token-list": "ts-node src/scripts/generateTokenList.ts",
-    "generate:governor-metas": "ts-node src/scripts/generateGovernorMetas.ts"
+    "generate:governor-metas": "ts-node src/scripts/generateGovernorMetas.ts",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix --cache",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.{md,json,js,yml,yaml,html}": "prettier --write"
   }
 }
