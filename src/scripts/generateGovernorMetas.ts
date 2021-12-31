@@ -22,7 +22,7 @@ const buildGovernorMetas = async () => {
   });
 
   await promises.writeFile(
-    `${__dirname}/../../data/governor-metas.mainnet.json`,
+    `${__dirname}/../../data/registry/governor-metas.mainnet.json`,
     stableStringify(mainnetGovernors)
   );
 
