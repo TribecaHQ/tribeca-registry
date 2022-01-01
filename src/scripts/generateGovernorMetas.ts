@@ -3,12 +3,19 @@ import { promises } from "fs";
 import devnetGovernorConfigsJSON from "../config/governors-list.devnet.json";
 import mainnetGovernorConfigsJSON from "../config/governors-list.mainnet.json";
 import type { GovernorConfig, GovernorMeta } from "../config/types";
+import { DESCRIPTION_CHARACTER_LIMIT } from "../constants";
 import { getGovTokenInfo } from "../utils/getTokenInfo";
 import { stableStringify } from "../utils/serialize";
 
 const buildGovernorMetas = async () => {
   const mainnetGovernorConfigs: GovernorConfig[] = mainnetGovernorConfigsJSON;
   const mainnetGovernors = mainnetGovernorConfigs.map((cfg) => {
+    if (cfg.description.length > DESCRIPTION_CHARACTER_LIMIT) {
+      throw new Error(
+        `Description for ${cfg.name} is too long (${cfg.description.length} > ${DESCRIPTION_CHARACTER_LIMIT}).`
+      );
+    }
+
     const token = getGovTokenInfo(cfg.govTokenMint, "mainnet-beta");
 
     if (!token?.logoURI && !cfg.customLogoURI) {
@@ -29,6 +36,12 @@ const buildGovernorMetas = async () => {
 
   const devnetGovernorConfigs: GovernorConfig[] = devnetGovernorConfigsJSON;
   const devnetGovernors = devnetGovernorConfigs.map((cfg) => {
+    if (cfg.description.length > DESCRIPTION_CHARACTER_LIMIT) {
+      throw new Error(
+        `Description for ${cfg.name} is too long (${cfg.description.length} > ${DESCRIPTION_CHARACTER_LIMIT}).`
+      );
+    }
+
     const token = getGovTokenInfo(cfg.govTokenMint);
 
     if (!token?.logoURI && !cfg.customLogoURI) {

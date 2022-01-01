@@ -3,12 +3,14 @@
     "slug": "cow",
     "name": "Cash Cow DAO",
     "address": "EnWtE8QEWYGkbVknjodYmnZPFt7Fpk9U9cBRpXY5e1Gh",
-    "govTokenMint": "CowKesoLUaHSbAMaUxJUj7eodHHsaLsS65cy8NFyRDGP"
+    "govTokenMint": "CowKesoLUaHSbAMaUxJUj7eodHHsaLsS65cy8NFyRDGP",
+    "description": "Cashio’s Memecoin #gmoo"
   },
   {
     "slug": "sbr",
     "name": "Saber",
     "address": "9tnpMysuibKx6SatcH3CWR9ZsSRMBNeBf1mhfL6gAXR4",
-    "govTokenMint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
+    "govTokenMint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",
+    "description": "AMM for mean-reverting trading pairs on Solana"
   }
 ]
