@@ -6,11 +6,14 @@ import solanaTokenList from "../../solana-token-list.json";
 
 export const getGovTokenInfo = (
   address: string,
-  network: Network
+  network?: Network
 ): TokenInfo | undefined => {
-  const chainId = networkToChainId(network);
-
   const tokenList = solanaTokenList as TokenInfo[];
+  if (!network) {
+    return tokenList.find((tok) => tok.address === address);
+  }
+
+  const chainId = networkToChainId(network);
   return tokenList.find(
     (tok) => tok.chainId === chainId && tok.address === address
   );
