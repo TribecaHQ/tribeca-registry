@@ -19,5 +19,12 @@
     "address": "DgZdLyx4sFFvgcntboWow3pv3bBehHVVy5QzEGVSpesX",
     "govTokenMint": "PoLEXM5xikzieXENFvP7WwHJPorcFiCUVuMo9BAGZT3",
     "description": "Leveraged Yield Aggregator on Solana"
+  },
+  {
+    "slug": "port",
+    "name": "Port",
+    "address": "Cuwmcp5TzYxuC4CU4eCCe8zYMZ362v1CFrKRU3Mxp2WL",
+    "govTokenMint": "PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y",
+    "description": "A suite of fixed-income products on Solana"
   }
 ]
