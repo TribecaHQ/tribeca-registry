@@ -3,7 +3,7 @@
   "packageManager": "yarn@3.1.1",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
-    "@saberhq/eslint-config": "^1.12.9",
+    "@saberhq/eslint-config": "^1.12.20",
     "@saberhq/solana-contrib": "^1.12.9",
     "@saberhq/token-utils": "^1.12.9",
     "@solana/spl-token-registry": "^0.2.1164",
