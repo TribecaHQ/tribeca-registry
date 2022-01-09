@@ -3,23 +3,24 @@
   "packageManager": "yarn@3.1.1",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
-    "@saberhq/eslint-config": "^1.12.9",
-    "@saberhq/solana-contrib": "^1.12.9",
-    "@saberhq/token-utils": "^1.12.9",
-    "@solana/spl-token-registry": "^0.2.1164",
+    "@saberhq/eslint-config": "^1.12.20",
+    "@saberhq/solana-contrib": "^1.12.20",
+    "@saberhq/token-utils": "^1.12.20",
+    "@saberhq/tsconfig": "^1.12.20",
+    "@solana/spl-token-registry": "^0.2.1344",
     "@solana/web3.js": "^1.31.0",
-    "@types/bn.js": "^5",
-    "@types/eslint": "^8",
+    "@types/bn.js": "^5.1.0",
+    "@types/eslint": "^8.2.2",
     "@types/lodash": "^4.14.178",
-    "@types/node": "^17.0.5",
-    "@types/prettier": "^2",
+    "@types/node": "^17.0.8",
+    "@types/prettier": "^2.4.2",
     "bn.js": "^5.2.0",
-    "eslint": "^8.5.0",
+    "eslint": "^8.6.0",
     "eslint-import-resolver-node": "^0.3.6",
     "fast-json-stable-stringify": "^2.1.0",
     "husky": "^7.0.4",
     "jsbi": "^4.1.0",
-    "lint-staged": "^12.1.4",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
@@ -36,5 +37,8 @@
   "lint-staged": {
     "*.ts": "eslint --cache --fix",
     "*.{md,json,js,yml,yaml,html}": "prettier --write"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
   }
 }

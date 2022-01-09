@@ -16,9 +16,15 @@ jobs:
         with:
           always-auth: true
           registry-url: "https://npm.pkg.github.com"
-      - uses: actions/cache@v2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Yarn Cache
+        uses: actions/cache@v2
         with:
-          key: ${{ runner.os }}-${{ hashFiles('./.yarn/**/*.js') }}
-          path: ./.yarn
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
       - run: yarn install
       - run: yarn build
