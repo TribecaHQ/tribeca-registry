@@ -35,7 +35,7 @@ const buildGovernorMetas = async () => {
   );
 
   const devnetGovernorConfigs: GovernorConfig[] = devnetGovernorConfigsJSON;
-  const devnetGovernors = devnetGovernorConfigs.map((cfg) => {
+  const devnetGovernors = devnetGovernorConfigs.map((cfg): GovernorMeta => {
     if (cfg.description.length > DESCRIPTION_CHARACTER_LIMIT) {
       throw new Error(
         `Description for ${cfg.name} is too long (${cfg.description.length} > ${DESCRIPTION_CHARACTER_LIMIT}).`
@@ -44,15 +44,19 @@ const buildGovernorMetas = async () => {
 
     const token = getGovTokenInfo(cfg.govTokenMint);
 
-    if (!token?.logoURI && !cfg.customLogoURI) {
+    const iconURL = cfg.customLogoURI ?? token?.logoURI;
+    if (!iconURL) {
       throw new Error("No logo found");
+    }
+    if (!token) {
+      throw new Error("No governance token found");
     }
 
     return {
       ...cfg,
-      iconURL: cfg.customLogoURI ?? token?.logoURI,
+      iconURL,
       govToken: token,
-    } as GovernorMeta;
+    };
   });
 
   await promises.writeFile(

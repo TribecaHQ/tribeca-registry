@@ -11,9 +11,15 @@
     "name": "Saber",
     "address": "9tnpMysuibKx6SatcH3CWR9ZsSRMBNeBf1mhfL6gAXR4",
     "govTokenMint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",
-    "description": "AMM for mean-reverting trading pairs on Solana"
+    "description": "AMM for mean-reverting trading pairs on Solana",
+    "proposals": {
+      "requiredDiscussionLink": "https://gov.saber.so/c/saber-community-proposals/6"
+    },
+    "links": {
+      "forum": "https://gov.saber.so"
+    }
   },
-   {
+  {
     "slug": "pole",
     "name": "Pole",
     "address": "3QdRG4feNfDqZ3GpSVGwW6hnSHb7AZ5BAcoKCpV9t2xr",
