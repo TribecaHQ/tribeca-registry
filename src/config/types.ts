@@ -82,4 +82,6 @@ export interface GovernorConfig {
 
 export interface GovernorMeta
   extends Omit<GovernorConfig, "govToken" | "iconURL">,
-    Required<Pick<GovernorConfig, "govToken" | "iconURL">> {}
+    Required<Pick<GovernorConfig, "iconURL">> {
+  govToken: TokenInfo;
+}
