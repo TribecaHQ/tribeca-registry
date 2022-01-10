@@ -5,7 +5,11 @@ export interface GovernorConfig {
   name: string;
   description: string;
   address: string;
-  govTokenMint: string;
+
+  govToken: {
+    address: string;
+  } & Partial<Omit<TokenInfo, "mint">>;
+
   customLogoURI?: string;
   /**
    * Settings for minting tokens as the DAO. Enabling this allows DAO members to create "mint" proposals which can be used for grants.
@@ -23,13 +27,23 @@ export interface GovernorConfig {
      */
     redeemer?: string;
   };
+  /**
+   * Settings for the Quarry Gauge system.
+   */
   gauge?: {
     /**
      * The Gaugemeister, if gauges are enabled for this governor.
      */
     gaugemeister: string;
   };
+  /**
+   * Settings for how proposals should be managed.
+   */
   proposals?: {
+    /**
+     *
+     */
+    instructions?: string;
     /**
      * If specified, this links to the forum for discussing proposals.
      */

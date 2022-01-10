@@ -1,0 +1,18 @@
+slug = "sbr"
+name = "Saber"
+address = "9tnpMysuibKx6SatcH3CWR9ZsSRMBNeBf1mhfL6gAXR4"
+description = "AMM for mean-reverting trading pairs on Solana"
+
+[proposals]
+requiredDiscussionLink = "https://gov.saber.so/c/saber-community-proposals/6"
+
+[minter]
+mintWrapper = "EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz"
+redeemer = "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU"
+
+[links]
+website = "https://saber.so"
+forum = "https://gov.saber.so"
+
+[govToken]
+address = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"

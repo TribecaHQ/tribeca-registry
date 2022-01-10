@@ -1,0 +1,11 @@
+slug = "sbr"
+name = "Saber"
+address = "9tnpMysuibKx6SatcH3CWR9ZsSRMBNeBf1mhfL6gAXR4"
+description = "AMM for mean-reverting trading pairs on Solana"
+customLogoURI = "https://spl-token-icons.static-assets.ship.capital/icons/101/Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1.svg"
+
+[govToken]
+address = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
+name = "Saber Protocol Token"
+symbol = "SBR"
+decimals = 6

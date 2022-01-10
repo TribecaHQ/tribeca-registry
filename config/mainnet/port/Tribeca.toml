@@ -1,0 +1,7 @@
+slug = "port"
+name = "Port"
+address = "GmUCWNhPKo8tHNsvjPQkh9WyvUmACcdrwV8LApGeLRKb"
+description = "A suite of fixed-income products on Solana"
+
+[govToken]
+address = "PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y"

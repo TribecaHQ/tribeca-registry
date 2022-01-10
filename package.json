@@ -40,6 +40,7 @@
     "*.{md,json,js,yml,yaml,html}": "prettier --write"
   },
   "dependencies": {
+    "toml": "^3.0.0",
     "tslib": "^2.3.1"
   }
 }

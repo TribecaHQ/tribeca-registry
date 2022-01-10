@@ -1,10 +1,7 @@
 # tribeca-registry
 
-Registry of Saber tokens and other assets.
+Registry of Tribeca DAOs.
 
-In the future, this will become an NPM package that auto-updates.
+## Adding a new DAO
 
-## Adding a new pool
-
-1. Create the decimal wrapper if applicable
-2. Run `yarn generate:decimal-wrappers`.
+Add a new `Tribeca.toml` to `config/<network>/<dao>`.

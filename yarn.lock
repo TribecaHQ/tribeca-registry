@@ -307,6 +307,7 @@ __metadata:
     jsbi: ^4.1.0
     lint-staged: ^12.1.7
     prettier: ^2.5.1
+    toml: ^3.0.0
     ts-node: ^10.4.0
     tslib: ^2.3.1
     typescript: ^4.5.4
@@ -3441,6 +3442,13 @@ __metadata:
   version: 2.0.0
   resolution: "toformat@npm:2.0.0"
   checksum: c75341911a811a85c309e2c3eb8e9c7b60f26e2c629170179fc92ed339a2faf44433ebde75d4ac6dbe6f55a2aa044e1d4cd5242dbdd5e4c047babbe6defd8387
+  languageName: node
+  linkType: hard
+
+"toml@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "toml@npm:3.0.0"
+  checksum: 5d7f1d8413ad7780e9bdecce8ea4c3f5130dd53b0a4f2e90b93340979a137739879d7b9ce2ce05c938b8cc828897fe9e95085197342a1377dd8850bf5125f15f
   languageName: node
   linkType: hard
 

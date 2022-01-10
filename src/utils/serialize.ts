@@ -14,8 +14,12 @@ export const serialize = (_key: string, value: unknown): unknown => {
       denominator: value.denominator.toString(),
     };
   }
-  if (isBN(value)) {
-    return value.toString();
+  try {
+    if (value && isBN(value)) {
+      return value.toString();
+    }
+  } catch (e) {
+    // nothing
   }
   return value;
 };
