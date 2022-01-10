@@ -283,6 +283,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tribecahq/registry@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@tribecahq/registry@workspace:."
+  dependencies:
+    "@rushstack/eslint-patch": ^1.1.0
+    "@saberhq/eslint-config": ^1.12.20
+    "@saberhq/solana-contrib": ^1.12.20
+    "@saberhq/token-utils": ^1.12.20
+    "@saberhq/tsconfig": ^1.12.20
+    "@solana/spl-token-registry": ^0.2.1344
+    "@solana/web3.js": ^1.31.0
+    "@types/bn.js": ^5.1.0
+    "@types/eslint": ^8.2.2
+    "@types/lodash": ^4.14.178
+    "@types/node": ^17.0.8
+    "@types/prettier": ^2.4.2
+    bn.js: ^5.2.0
+    eslint: ^8.6.0
+    eslint-import-resolver-node: ^0.3.6
+    fast-json-stable-stringify: ^2.1.0
+    husky: ^7.0.4
+    jsbi: ^4.1.0
+    lint-staged: ^12.1.7
+    prettier: ^2.5.1
+    ts-node: ^10.4.0
+    tslib: ^2.3.1
+    typescript: ^4.5.4
+  languageName: unknown
+  linkType: soft
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.8
   resolution: "@tsconfig/node10@npm:1.0.8"
@@ -3413,36 +3443,6 @@ __metadata:
   checksum: c75341911a811a85c309e2c3eb8e9c7b60f26e2c629170179fc92ed339a2faf44433ebde75d4ac6dbe6f55a2aa044e1d4cd5242dbdd5e4c047babbe6defd8387
   languageName: node
   linkType: hard
-
-"tribeca-registry@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "tribeca-registry@workspace:."
-  dependencies:
-    "@rushstack/eslint-patch": ^1.1.0
-    "@saberhq/eslint-config": ^1.12.20
-    "@saberhq/solana-contrib": ^1.12.20
-    "@saberhq/token-utils": ^1.12.20
-    "@saberhq/tsconfig": ^1.12.20
-    "@solana/spl-token-registry": ^0.2.1344
-    "@solana/web3.js": ^1.31.0
-    "@types/bn.js": ^5.1.0
-    "@types/eslint": ^8.2.2
-    "@types/lodash": ^4.14.178
-    "@types/node": ^17.0.8
-    "@types/prettier": ^2.4.2
-    bn.js: ^5.2.0
-    eslint: ^8.6.0
-    eslint-import-resolver-node: ^0.3.6
-    fast-json-stable-stringify: ^2.1.0
-    husky: ^7.0.4
-    jsbi: ^4.1.0
-    lint-staged: ^12.1.7
-    prettier: ^2.5.1
-    ts-node: ^10.4.0
-    tslib: ^2.3.1
-    typescript: ^4.5.4
-  languageName: unknown
-  linkType: soft
 
 "ts-node@npm:^10.4.0":
   version: 10.4.0

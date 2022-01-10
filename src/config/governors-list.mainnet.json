@@ -5,6 +5,9 @@
     "address": "EnWtE8QEWYGkbVknjodYmnZPFt7Fpk9U9cBRpXY5e1Gh",
     "govTokenMint": "CowKesoLUaHSbAMaUxJUj7eodHHsaLsS65cy8NFyRDGP",
     "description": "Cashio’s Memecoin #gmoo",
+    "minter": {
+      "mintWrapper": "GVtygEvQRRxXCbeNEwVHkCzdt8jswr7T2gYLNtJnhGHo"
+    },
     "gauge": {
       "gaugemeister": "3zfW5niUjbGucfp81ksTwD7PHafadWXmUZWebQZWQnio"
     }
@@ -17,6 +20,10 @@
     "description": "AMM for mean-reverting trading pairs on Solana",
     "proposals": {
       "requiredDiscussionLink": "https://gov.saber.so/c/saber-community-proposals/6"
+    },
+    "minter": {
+      "mintWrapper": "EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz",
+      "redeemer": "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU"
     },
     "links": {
       "forum": "https://gov.saber.so"
