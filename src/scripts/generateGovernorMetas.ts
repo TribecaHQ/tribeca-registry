@@ -20,7 +20,9 @@ const validateTokenInfo = ({
   name,
   chainId,
   ...rest
-}: { address: string } & Readonly<Partial<TokenInfo>>): TokenInfo => {
+}: { address: string; chainId: number } & Readonly<
+  Partial<TokenInfo>
+>): TokenInfo => {
   if (decimals === undefined) {
     throw new Error("decimals required");
   }
@@ -29,9 +31,6 @@ const validateTokenInfo = ({
   }
   if (name === undefined) {
     throw new Error("name required");
-  }
-  if (chainId === undefined) {
-    throw new Error("chainId required");
   }
   return { address, decimals, symbol, name, chainId, ...rest };
 };
@@ -50,7 +49,7 @@ const validateCfg = (
     getGovTokenInfo(cfg.govToken.address, network) ??
     validateTokenInfo({ ...cfg.govToken, chainId: networkToChainId(network) });
 
-  const iconURL = cfg.customLogoURI ?? token?.logoURI;
+  const iconURL = cfg.iconURL ?? token?.logoURI;
   if (!iconURL) {
     throw new Error("No logo found");
   }

@@ -1,16 +1,41 @@
 import type { TokenInfo } from "@saberhq/token-utils";
 
+/**
+ * Configuration of a Governor.
+ */
 export interface GovernorConfig {
+  /**
+   * Unique slug to use in the URL.
+   */
   slug: string;
+
+  /**
+   * Name of the protocol.
+   */
   name: string;
+
+  /**
+   * Description of the protocol.
+   */
   description: string;
+
+  /**
+   * Address of the Governor.
+   */
   address: string;
 
+  /**
+   * Governance token information.
+   */
   govToken: {
     address: string;
   } & Partial<Omit<TokenInfo, "mint">>;
 
-  customLogoURI?: string;
+  /**
+   * Custom logo to use for the DAO, if different from the token icon.
+   */
+  iconURL?: string;
+
   /**
    * Settings for minting tokens as the DAO. Enabling this allows DAO members to create "mint" proposals which can be used for grants.
    */
@@ -27,6 +52,7 @@ export interface GovernorConfig {
      */
     redeemer?: string;
   };
+
   /**
    * Settings for the Quarry Gauge system.
    */
@@ -41,20 +67,19 @@ export interface GovernorConfig {
    */
   proposals?: {
     /**
-     *
-     */
-    instructions?: string;
-    /**
      * If specified, this links to the forum for discussing proposals.
      */
     requiredDiscussionLink?: string | null;
   };
+
+  /**
+   * Various links.
+   */
   links?: {
     forum?: string;
   };
 }
 
-export interface GovernorMeta extends GovernorConfig {
-  govToken: TokenInfo;
-  iconURL: string;
-}
+export interface GovernorMeta
+  extends Omit<GovernorConfig, "govToken" | "iconURL">,
+    Required<Pick<GovernorConfig, "govToken" | "iconURL">> {}
