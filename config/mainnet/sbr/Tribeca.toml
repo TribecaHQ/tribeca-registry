@@ -13,6 +13,10 @@ redeemer = "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU"
 [links]
 website = "https://saber.so"
 forum = "https://gov.saber.so"
+discord = "https://chat.saber.so"
+github = "https://github.com/saber-hq"
+medium = "https://blog.saber.so"
+twitter = "https://twitter.com/saber_hq"
 
 [govToken]
 address = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
