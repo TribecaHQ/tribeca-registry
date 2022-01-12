@@ -61,6 +61,10 @@ export interface GovernorConfig {
      * The Gaugemeister, if gauges are enabled for this governor.
      */
     gaugemeister: string;
+    /**
+     * If true, Gauges will not be visible unless the page is explicitly visited.
+     */
+    hidden?: boolean;
   };
   /**
    * Settings for how proposals should be managed.

@@ -21,3 +21,7 @@ twitter = "https://twitter.com/saber_hq"
 
 [govToken]
 address = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
+
+[gauge]
+gaugemeister = "28ZDtf6d2wsYhBvabTxUHTRT6MDxqjmqR7RMCp348tyU"
+hidden = true
