@@ -1,0 +1,15 @@
+slug = "sunny"
+name = "Sunny Aggregator"
+address = "8NDDbatDi5WxB433q3qyMMMYvjodMkCenGdTjkxuASyE"
+description = "Solana's cross-chain DeFi yield aggregator."
+
+[links]
+website = "https://sunny.ag"
+app = "https://app.sunny.ag"
+twitter = "https://twitter.com/SunnyAggregator"
+
+[govToken]
+address = "SUNNYWgPQmFxe9wTZzNK7iPnJ3vYDrkgnxJRJm1s3ag"
+
+[gauge]
+gaugemeister = "GBYZGgJks1re9BkJ8RB5QUMmmoyb7MsQ9ABFrgX5c5GZ"
