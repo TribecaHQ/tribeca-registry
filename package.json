@@ -4,7 +4,7 @@
   "packageManager": "yarn@3.1.1",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
-    "@saberhq/eslint-config": "^1.12.27",
+    "@saberhq/eslint-config": "^1.12.30",
     "@saberhq/solana-contrib": "^1.12.27",
     "@saberhq/token-utils": "^1.12.27",
     "@saberhq/tsconfig": "^1.12.27",
