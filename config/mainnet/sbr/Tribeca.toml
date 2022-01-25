@@ -46,7 +46,12 @@ type = "smart-wallet"
 address = "F9TxY3Bj1tWebTHZPJC323WK8KwAe3W6XKkg2hzCdsKM"
 
 [proposals]
-notice = ""
+notice = """\
+To create a proposal, first make a post on the [Saber Governance Forum](https://gov.saber.so/c/governance/6).
+
+Once you have determined that there is sufficient community support,
+add the link to the discussion thread and create a proposal.
+"""
 discussion = { required = true, link = "https://gov.saber.so/c/governance/6", prefix = "https://gov.saber.so/t/" }
 
 [links]
