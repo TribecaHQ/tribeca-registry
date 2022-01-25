@@ -4,8 +4,8 @@ import { isBN } from "bn.js";
 import fastStableStringify from "fast-json-stable-stringify";
 
 export const serialize = (_key: string, value: unknown): unknown => {
-  if (isPublicKey(value)) {
-    return value.toString();
+  if (!value) {
+    return value;
   }
   if (Percent.isPercent(value) || Fraction.isFraction(value)) {
     return {
@@ -20,6 +20,9 @@ export const serialize = (_key: string, value: unknown): unknown => {
     }
   } catch (e) {
     // nothing
+  }
+  if (isPublicKey(value)) {
+    return value.toString();
   }
   return value;
 };

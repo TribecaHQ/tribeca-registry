@@ -1,13 +1,14 @@
+[governance]
 slug = "cow"
 name = "Cash Cow DAO"
 address = "EnWtE8QEWYGkbVknjodYmnZPFt7Fpk9U9cBRpXY5e1Gh"
 description = "Cashio’s Memecoin #gmoo"
 
-[minter]
-mintWrapper = "GVtygEvQRRxXCbeNEwVHkCzdt8jswr7T2gYLNtJnhGHo"
-
-[gauge]
-gaugemeister = "3zfW5niUjbGucfp81ksTwD7PHafadWXmUZWebQZWQnio"
-
-[govToken]
+[governance.token]
 address = "CowKesoLUaHSbAMaUxJUj7eodHHsaLsS65cy8NFyRDGP"
+
+[quarry]
+mint-wrapper = "GVtygEvQRRxXCbeNEwVHkCzdt8jswr7T2gYLNtJnhGHo"
+
+[quarry.gauge]
+gaugemeister = "3zfW5niUjbGucfp81ksTwD7PHafadWXmUZWebQZWQnio"

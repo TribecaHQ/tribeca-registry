@@ -1,15 +1,19 @@
+[governance]
 slug = "sunny"
 name = "Sunny Aggregator"
 address = "8NDDbatDi5WxB433q3qyMMMYvjodMkCenGdTjkxuASyE"
 description = "Solana's cross-chain DeFi yield aggregator."
+
+[governance.token]
+address = "SUNNYWgPQmFxe9wTZzNK7iPnJ3vYDrkgnxJRJm1s3ag"
 
 [links]
 website = "https://sunny.ag"
 app = "https://app.sunny.ag"
 twitter = "https://twitter.com/SunnyAggregator"
 
-[govToken]
-address = "SUNNYWgPQmFxe9wTZzNK7iPnJ3vYDrkgnxJRJm1s3ag"
+[quarry]
+rewarder = "97PmYbGpSHSrKrUkQX793mjpA2EA9rrQKkHsQuvenU44"
 
-[gauge]
+[quarry.gauge]
 gaugemeister = "GBYZGgJks1re9BkJ8RB5QUMmmoyb7MsQ9ABFrgX5c5GZ"

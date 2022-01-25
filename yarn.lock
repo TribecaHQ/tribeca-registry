@@ -153,9 +153,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@saberhq/eslint-config@npm:^1.12.34":
-  version: 1.12.34
-  resolution: "@saberhq/eslint-config@npm:1.12.34"
+"@saberhq/eslint-config@npm:^1.12.35":
+  version: 1.12.35
+  resolution: "@saberhq/eslint-config@npm:1.12.35"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.10.0
     "@typescript-eslint/parser": ^5.10.0
@@ -168,13 +168,13 @@ __metadata:
     prettier: ^2.5.1
   peerDependencies:
     eslint: ">=7"
-  checksum: ad742304fa1e8dc18b7810c9c6d91442bdc5df1310856e63c853b8aaebe91ea01d1eef6f72660f3bd478181bf71570f70dbabda618e6aa7af0db5565f2be7ee8
+  checksum: e9b8c259b138e2b9145b69dac9a615c34f7cb84eb8e9f623e97f5280eed8e72fef8be8a3130f496430213f47962b532f88fa9cb80a2fc705ea9430ca540c64c0
   languageName: node
   linkType: hard
 
-"@saberhq/solana-contrib@npm:^1.12.34":
-  version: 1.12.34
-  resolution: "@saberhq/solana-contrib@npm:1.12.34"
+"@saberhq/solana-contrib@npm:^1.12.35":
+  version: 1.12.35
+  resolution: "@saberhq/solana-contrib@npm:1.12.35"
   dependencies:
     "@types/promise-retry": ^1.1.3
     "@types/retry": ^0.12.1
@@ -185,15 +185,15 @@ __metadata:
   peerDependencies:
     "@solana/web3.js": ^1.29.2
     bn.js: ^4 || ^5
-  checksum: 4401fd70faeaf01623ee1a696b129d518091a7d3f2f693bb6726881ab4032324b9bc1786c516f83fcb4beae53cb46cc193da876453d09c4ab3d39eeb90893fe8
+  checksum: bde2c1bef60716785b761ec19c11b09d0592d718baa6fa1035e16b55e85af3bb5faf7a7913b857e13ec65fe91c2cc6187b31bc268c935c7ebe06d1631358b513
   languageName: node
   linkType: hard
 
-"@saberhq/token-utils@npm:^1.12.34":
-  version: 1.12.34
-  resolution: "@saberhq/token-utils@npm:1.12.34"
+"@saberhq/token-utils@npm:^1.12.35":
+  version: 1.12.35
+  resolution: "@saberhq/token-utils@npm:1.12.35"
   dependencies:
-    "@saberhq/solana-contrib": ^1.12.34
+    "@saberhq/solana-contrib": ^1.12.35
     "@solana/buffer-layout": ^4.0.0
     "@solana/spl-token": ^0.1.8
     "@ubeswap/token-math": ^4.4.1
@@ -203,14 +203,14 @@ __metadata:
     "@solana/web3.js": ^1.29.2
     bn.js: ^4 || ^5
     jsbi: ^3 || ^4
-  checksum: c57ed6f94fccae69f2083d649862c2a79d97c949ae9fef456bb8f53fbf58363a62e4949ae8f1cca967dc71f937c689f52241983d94a689ca3d6b9597f0c44de2
+  checksum: 99a3413f3b657b85f2234b5603d5f590a087541bcc48108d42816673958a492283c35824bbc980c0b5afb514d765442eebf66281075aca2fcf89cff59bbbb074
   languageName: node
   linkType: hard
 
-"@saberhq/tsconfig@npm:^1.12.34":
-  version: 1.12.34
-  resolution: "@saberhq/tsconfig@npm:1.12.34"
-  checksum: ef2df67b6542d37dd0f4869b078bde22c06bd57b559e674105f3458b4f32adce243b164161698db2a7e3104dc9e99a33f7ceba6e7529cb15ff552313db307fce
+"@saberhq/tsconfig@npm:^1.12.35":
+  version: 1.12.35
+  resolution: "@saberhq/tsconfig@npm:1.12.35"
+  checksum: 88b9979c8032c50f3782e8610370302f892811599356c7327479d6b7a35eb507b6203d258482af652795238e3e27e946ff0bc74a64c2d0db70bc465052be7dee
   languageName: node
   linkType: hard
 
@@ -232,12 +232,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solana/spl-token-registry@npm:^0.2.1724":
-  version: 0.2.1724
-  resolution: "@solana/spl-token-registry@npm:0.2.1724"
+"@solana/spl-token-registry@npm:^0.2.1752":
+  version: 0.2.1752
+  resolution: "@solana/spl-token-registry@npm:0.2.1752"
   dependencies:
     cross-fetch: 3.0.6
-  checksum: 0ae212f245abd4dac95f374f4272a6353de2adcfca6c19dd9079deeb9fe07a1ee08a72b275f53d18c6f99af840ad1f7047b039e04a4c09f2d03c82c72ad0f0bc
+  checksum: cff1bc03ad1b63823ddc80386daba6797bca22533bdf22a8e19c9bb8de4d38dd3c5f95b759f625089883bd97f71093b881f2458a77f23cf940ffbdecfe474da2
   languageName: node
   linkType: hard
 
@@ -311,16 +311,16 @@ __metadata:
   resolution: "@tribecahq/registry@workspace:."
   dependencies:
     "@rushstack/eslint-patch": ^1.1.0
-    "@saberhq/eslint-config": ^1.12.34
-    "@saberhq/solana-contrib": ^1.12.34
-    "@saberhq/token-utils": ^1.12.34
-    "@saberhq/tsconfig": ^1.12.34
-    "@solana/spl-token-registry": ^0.2.1724
+    "@saberhq/eslint-config": ^1.12.35
+    "@saberhq/solana-contrib": ^1.12.35
+    "@saberhq/token-utils": ^1.12.35
+    "@saberhq/tsconfig": ^1.12.35
+    "@solana/spl-token-registry": ^0.2.1752
     "@solana/web3.js": ^1.32.0
     "@types/bn.js": ^5.1.0
     "@types/eslint": ^8.4.1
     "@types/lodash": ^4.14.178
-    "@types/node": ^17.0.10
+    "@types/node": ^17.0.11
     "@types/prettier": ^2.4.3
     bn.js: ^5.2.0
     eslint: ^8.7.0
@@ -329,7 +329,9 @@ __metadata:
     husky: ^7.0.4
     jsbi: ^4.1.0
     lint-staged: ^12.3.1
+    lodash: ^4.17.21
     prettier: ^2.5.1
+    tiny-invariant: ^1.2.0
     toml: ^3.0.0
     ts-node: ^10.4.0
     tslib: ^2.3.1
@@ -455,10 +457,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^17.0.10":
-  version: 17.0.10
-  resolution: "@types/node@npm:17.0.10"
-  checksum: 979e83d642a2b4f18fa1a4233f884822c05abc7acd0836024aa964187f8446432b21f7913e72fe2b3927c4a811c27a0b6cd60ac7c4ac6a6762cfbab70782aa6a
+"@types/node@npm:^17.0.11":
+  version: 17.0.11
+  resolution: "@types/node@npm:17.0.11"
+  checksum: 46bed84a9ff900ab004da3cb473b851cc33c6d50262f7cb58457ed557c0546153baa51e5220a6103b7f46af84b2e27115103d83adb08c7420f672e71c9996cca
   languageName: node
   linkType: hard
 
@@ -2465,7 +2467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.20":
+"lodash@npm:^4.17.20, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7

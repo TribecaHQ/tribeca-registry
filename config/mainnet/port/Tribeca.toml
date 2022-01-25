@@ -1,17 +1,18 @@
+[governance]
 slug = "port"
 name = "Port"
 address = "GmUCWNhPKo8tHNsvjPQkh9WyvUmACcdrwV8LApGeLRKb"
 description = "A suite of fixed-income products on Solana"
 
-[minter]
-mintWrapper = "HV5q5fTPSQUugUg1xhNQkeviG1g9TL7SSANBizL6xx3W"
+[governance.token]
+address = "PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y"
 
 [links]
 website = "https://port.finance"
 app = "https://mainnet.port.finance"
 
-[govToken]
-address = "PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y"
+[quarry]
+mint-wrapper = "HV5q5fTPSQUugUg1xhNQkeviG1g9TL7SSANBizL6xx3W"
 
-[gauge]
+[quarry.gauge]
 gaugemeister = "72sErSoiCxLqEmM7Vg2VfJBAd5PVcEaAKti99fd1dRbo"

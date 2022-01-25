@@ -1,0 +1,130 @@
+import type { TokenInfo } from "@saberhq/token-utils";
+import { chainIdToNetwork, networkToChainId } from "@saberhq/token-utils";
+import type { Cluster } from "@solana/web3.js";
+import { PublicKey } from "@solana/web3.js";
+import { mapValues, startCase } from "lodash";
+import invariant from "tiny-invariant";
+
+import type {
+  GovernanceConfig,
+  GovernorConfig,
+  QuarryConfig,
+} from "../config/types";
+import { getGovTokenInfo } from "../utils/getTokenInfo";
+import type { GovernanceRaw, GovernorConfigRaw, QuarryRaw } from "./types";
+import { validateTokenInfo } from "./validate";
+
+const parseGovernance = ({
+  slug,
+  name,
+  description,
+  address,
+  network: theNetwork,
+  "icon-url": iconURL,
+  token,
+}: GovernanceRaw): GovernanceConfig => {
+  const chainId = token?.chainId;
+  const network = theNetwork ?? (chainId ? chainIdToNetwork(chainId) : null);
+  invariant(network && network !== "localnet", "network");
+
+  const govTokenAddress = token?.address;
+  invariant(govTokenAddress);
+  const prepopulatedTokenInfo = getGovTokenInfo(govTokenAddress, network);
+  const validatedIconURL =
+    iconURL ?? token?.logoURI ?? prepopulatedTokenInfo?.logoURI;
+  invariant(validatedIconURL);
+  const tokenInfo: Partial<TokenInfo> & Pick<TokenInfo, "address" | "chainId"> =
+    {
+      ...prepopulatedTokenInfo,
+      ...token,
+      chainId: networkToChainId(network),
+      address: govTokenAddress,
+      logoURI: validatedIconURL,
+    };
+
+  const validatedToken = validateTokenInfo(tokenInfo);
+
+  return {
+    slug,
+    name,
+    description,
+    address: new PublicKey(address),
+    network,
+    iconURL: validatedIconURL,
+    token: validatedToken,
+  };
+};
+
+const parseQuarry = ({
+  rewarder,
+  redeemer,
+  "mint-wrapper": mintWrapper,
+  operator,
+  gauge,
+  features,
+  ...common
+}: QuarryRaw): QuarryConfig => {
+  return {
+    rewarder: rewarder ? new PublicKey(rewarder) : undefined,
+    mintWrapper: mintWrapper ? new PublicKey(mintWrapper) : undefined,
+    redeemer: redeemer ? new PublicKey(redeemer) : undefined,
+    features: features ?? [],
+    gauge: gauge
+      ? {
+          ...gauge,
+          gaugemeister: new PublicKey(gauge.gaugemeister),
+        }
+      : undefined,
+    operator: operator
+      ? {
+          ...operator,
+          address: new PublicKey(operator.address),
+          features: operator.features ?? [],
+        }
+      : operator,
+    ...common,
+  };
+};
+
+export const parseGovernorConfig = (
+  raw: GovernorConfigRaw,
+  cluster: Cluster
+): GovernorConfig => {
+  const governance = parseGovernance({ ...raw.governance, network: cluster });
+  const quarry = raw.quarry ? parseQuarry(raw.quarry) : undefined;
+  return {
+    slug: governance.slug,
+    name: governance.name,
+    description: governance.description,
+    address: new PublicKey(governance.address),
+    govToken: governance.token,
+    iconURL: governance.iconURL,
+
+    governance,
+    proposals: raw.proposals,
+    quarry,
+    minter: quarry
+      ? {
+          mintWrapper: quarry?.mintWrapper,
+          redeemer: quarry?.redeemer,
+        }
+      : undefined,
+    gauge: quarry?.gauge
+      ? {
+          gaugemeister: quarry.gauge.gaugemeister,
+          hidden: quarry.gauge.hidden,
+        }
+      : undefined,
+    links: raw.links
+      ? mapValues(raw.links, (link, key) => {
+          if (typeof link === "string") {
+            return {
+              label: startCase(key),
+              url: link,
+            };
+          }
+          return link;
+        })
+      : undefined,
+  };
+};

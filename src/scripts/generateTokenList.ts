@@ -1,5 +1,5 @@
 import { GitHubTokenListResolutionStrategy } from "@solana/spl-token-registry";
-import fs from "fs";
+import * as fs from "fs/promises";
 
 import { stableStringify } from "../utils/serialize";
 
@@ -8,7 +8,7 @@ import { stableStringify } from "../utils/serialize";
  */
 const fetchTokens = async (): Promise<void> => {
   const allTokens = await new GitHubTokenListResolutionStrategy().resolve();
-  fs.writeFileSync(
+  await fs.writeFile(
     `${__dirname}/../../solana-token-list.json`,
     stableStringify(allTokens)
   );

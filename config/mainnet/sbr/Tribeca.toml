@@ -1,14 +1,53 @@
+[governance]
+network = "mainnet-beta"
 slug = "sbr"
 name = "Saber"
 address = "9tnpMysuibKx6SatcH3CWR9ZsSRMBNeBf1mhfL6gAXR4"
 description = "AMM for mean-reverting trading pairs on Solana"
 
-[proposals]
-requiredDiscussionLink = "https://gov.saber.so/c/saber-community-proposals/6"
+[governance.token]
+address = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
 
-[minter]
-mintWrapper = "EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz"
-redeemer = "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU"
+[governance.parameters.governor]
+quorum-votes = 400_000_000_000000
+token-mint = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
+voting-delay = 86_400
+voting-period = 259_200
+timelock-delay = 86_400
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 604_800 # 7 days
+max-stake-duration = 157_680_000 # 5 years
+proposal-activation-min-votes = 10_000_000_000000 # 10M veSBR / 1M SBR
+whitelist-enabled = true
+
+[site]
+aliases = ["dao.saber.so"]
+
+# DAO addresses to track.
+[addresses]
+governor = "9tnpMysuibKx6SatcH3CWR9ZsSRMBNeBf1mhfL6gAXR4"
+electorate = "4tr9CDSgZRLYPGdcsm9PztaGSfJtX5CEmqDbEbvCTX2G"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "F9TxY3Bj1tWebTHZPJC323WK8KwAe3W6XKkg2hzCdsKM"
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "ByB3GkPHuUBmzcNbY1Ed7xK2uMkEkNsxTwjMGAFeLsbw"
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "F9TxY3Bj1tWebTHZPJC323WK8KwAe3W6XKkg2hzCdsKM"
+
+[proposals]
+notice = ""
+discussion = { required = true, link = "https://gov.saber.so/c/governance/6", prefix = "https://gov.saber.so/t/" }
 
 [links]
 website = "https://saber.so"
@@ -19,8 +58,15 @@ github = "https://github.com/saber-hq"
 medium = "https://blog.saber.so"
 twitter = "https://twitter.com/saber_hq"
 
-[govToken]
-address = "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1"
+[quarry]
+rewarder = "rXhAofQCT7NN9TUqigyEAUzV1uLL4boeD8CRkNBSkYk"
+mint-wrapper = "EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz"
+redeemer = "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU"
+features = ["issue-tokens"]
 
-[gauge]
+[quarry.operator]
+address = "GdW7Accmjusk8qKUPoCMJasEje63h97igqkjdEpacpRN"
+features = ["set-annual-rewards-rate"]
+
+[quarry.gauge]
 gaugemeister = "28ZDtf6d2wsYhBvabTxUHTRT6MDxqjmqR7RMCp348tyU"

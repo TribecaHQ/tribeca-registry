@@ -1,7 +1,8 @@
+[governance]
 slug = "pole"
 name = "Pole"
 address = "3QdRG4feNfDqZ3GpSVGwW6hnSHb7AZ5BAcoKCpV9t2xr"
 description = "Leveraged Yield Aggregator on Solana"
 
-[govToken]
+[governance.token]
 address = "PoLEXM5xikzieXENFvP7WwHJPorcFiCUVuMo9BAGZT3"
