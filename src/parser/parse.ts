@@ -11,11 +11,11 @@ import type {
   QuarryConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
-import { getGovTokenInfo } from "../utils/getTokenInfo";
+import { fetchGovTokenInfo } from "../utils/getTokenInfo";
 import type { GovernanceRaw, GovernorConfigRaw, QuarryRaw } from "./types";
 import { validateTokenInfo } from "./validate";
 
-const parseGovernance = ({
+const parseGovernance = async ({
   slug,
   name,
   description,
@@ -25,14 +25,17 @@ const parseGovernance = ({
   token,
 
   parameters,
-}: GovernanceRaw): GovernanceConfig => {
+}: GovernanceRaw): Promise<GovernanceConfig> => {
   const chainId = token?.chainId;
   const network = theNetwork ?? (chainId ? chainIdToNetwork(chainId) : null);
   invariant(network && network !== "localnet", "network");
 
   const govTokenAddress = token?.address;
   invariant(govTokenAddress);
-  const prepopulatedTokenInfo = getGovTokenInfo(govTokenAddress, network);
+  const prepopulatedTokenInfo = await fetchGovTokenInfo(
+    govTokenAddress,
+    network
+  );
   const validatedIconURL =
     iconURL ?? token?.logoURI ?? prepopulatedTokenInfo?.logoURI;
   invariant(validatedIconURL);
@@ -117,11 +120,14 @@ const parseQuarry = ({
   };
 };
 
-export const parseGovernorConfig = (
+export const parseGovernorConfig = async (
   raw: GovernorConfigRaw,
   cluster: Cluster
-): GovernorConfig => {
-  const governance = parseGovernance({ ...raw.governance, network: cluster });
+): Promise<GovernorConfig> => {
+  const governance = await parseGovernance({
+    ...raw.governance,
+    network: cluster,
+  });
   const quarry = raw.quarry ? parseQuarry(raw.quarry) : undefined;
   return {
     slug: governance.slug,

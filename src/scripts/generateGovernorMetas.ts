@@ -32,7 +32,7 @@ const buildGovernorMetasForNetwork = async (
       const rawConfig = toml.parse(config.toString()) as GovernorConfigRaw;
 
       try {
-        const parsedConfig = parseGovernorConfig(rawConfig, network);
+        const parsedConfig = await parseGovernorConfig(rawConfig, network);
         const config = validateConfig(parsedConfig);
         await fs.writeFile(`${outDir}/${dao}.json`, stableStringify(config));
         return config;
