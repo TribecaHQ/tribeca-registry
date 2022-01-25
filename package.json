@@ -29,7 +29,7 @@
   },
   "scripts": {
     "build": "tsc -P tsconfig.build.json && tsc -P tsconfig.esm.json",
-    "generate": "mkdir -p data/registry && npm run generate:solana-token-list && npm run generate:governor-metas",
+    "generate": "mkdir -p data/registry && cp -R static/* data/ && npm run generate:solana-token-list && npm run generate:governor-metas",
     "generate:solana-token-list": "ts-node src/scripts/generateTokenList.ts",
     "generate:governor-metas": "ts-node src/scripts/generateGovernorMetas.ts",
     "lint": "eslint . --cache",
