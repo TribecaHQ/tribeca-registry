@@ -28,7 +28,7 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
-    "build": "npm run generate && eslint . --fix --cache && prettier --write data/registry/*.json",
+    "build": "tsc -P tsconfig.build.json && tsc -P tsconfig.esm.json",
     "generate": "mkdir -p data/registry && npm run generate:solana-token-list && npm run generate:governor-metas",
     "generate:solana-token-list": "ts-node src/scripts/generateTokenList.ts",
     "generate:governor-metas": "ts-node src/scripts/generateGovernorMetas.ts",
@@ -45,5 +45,9 @@
     "tiny-invariant": "^1.2.0",
     "toml": "^3.0.0",
     "tslib": "^2.3.1"
-  }
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
 }

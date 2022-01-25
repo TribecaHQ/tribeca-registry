@@ -1,10 +1,17 @@
-import type { TokenInfo, u64 } from "@saberhq/token-utils";
+import type { TokenInfo } from "@saberhq/token-utils";
+import { u64 } from "@saberhq/token-utils";
 import type { PublicKey } from "@solana/web3.js";
 
 import type { GovernanceRaw } from "../parser/types";
 
+export class TokenQuantity extends u64 {
+  override toJSON(): string {
+    return this.toString();
+  }
+}
+
 export interface GovernorParameters {
-  quorumVotes: u64;
+  quorumVotes: TokenQuantity;
   votingDelay: number;
   votingPeriod: number;
   timelockDelay: number;
@@ -14,7 +21,7 @@ export interface LockerParameters {
   maxStakeVoteMultiplier: number;
   minStakeDuration: number;
   maxStakeDuration: number;
-  proposalActivationMinVotes: u64;
+  proposalActivationMinVotes: TokenQuantity;
   whitelistEnabled: boolean;
 }
 
@@ -28,8 +35,8 @@ export type GovernanceConfig = Omit<
     token: TokenInfo;
 
     parameters?: {
-      governor: GovernorParameters;
-      locker: LockerParameters;
+      governor?: GovernorParameters;
+      locker?: LockerParameters;
     };
   };
 

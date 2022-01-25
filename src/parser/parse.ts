@@ -10,6 +10,7 @@ import type {
   GovernorConfig,
   QuarryConfig,
 } from "../config/types";
+import { TokenQuantity } from "../config/types";
 import { getGovTokenInfo } from "../utils/getTokenInfo";
 import type { GovernanceRaw, GovernorConfigRaw, QuarryRaw } from "./types";
 import { validateTokenInfo } from "./validate";
@@ -22,6 +23,8 @@ const parseGovernance = ({
   network: theNetwork,
   "icon-url": iconURL,
   token,
+
+  parameters,
 }: GovernanceRaw): GovernanceConfig => {
   const chainId = token?.chainId;
   const network = theNetwork ?? (chainId ? chainIdToNetwork(chainId) : null);
@@ -52,6 +55,34 @@ const parseGovernance = ({
     network,
     iconURL: validatedIconURL,
     token: validatedToken,
+
+    parameters: parameters
+      ? {
+          governor: parameters.governor
+            ? {
+                quorumVotes: new TokenQuantity(
+                  parameters.governor["quorum-votes"]
+                ),
+                votingDelay: parameters.governor["voting-delay"],
+                votingPeriod: parameters.governor["voting-period"],
+                timelockDelay: parameters.governor["timelock-delay"],
+              }
+            : undefined,
+          locker: parameters.locker
+            ? {
+                maxStakeVoteMultiplier:
+                  parameters.locker?.["max-stake-vote-multiplier"],
+                minStakeDuration: parameters.locker?.["min-stake-duration"],
+                maxStakeDuration: parameters.locker?.["max-stake-duration"],
+                proposalActivationMinVotes: new TokenQuantity(
+                  parameters.locker["proposal-activation-min-votes"]
+                ),
+                whitelistEnabled:
+                  parameters.locker?.["whitelist-enabled"] ?? false,
+              }
+            : undefined,
+        }
+      : undefined,
   };
 };
 
