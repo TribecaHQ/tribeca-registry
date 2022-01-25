@@ -146,4 +146,15 @@ export interface GovernorConfig {
    * Various links.
    */
   links?: Record<string, { label: string; url: string }>;
+
+  addresses?: Record<
+    string,
+    {
+      label: string;
+      type?: "smart-wallet";
+      address: PublicKey;
+      description?: string;
+      descriptionLink?: string;
+    }
+  >;
 }

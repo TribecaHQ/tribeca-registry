@@ -133,6 +133,8 @@ interface KnownAddressRaw {
   label: string;
   type?: "smart-wallet";
   address: string;
+  description?: string;
+  ["description-link"]?: string;
 }
 
 interface SiteConfigRaw {

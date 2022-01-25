@@ -163,5 +163,22 @@ export const parseGovernorConfig = async (
           return link;
         })
       : undefined,
+    addresses: raw.addresses
+      ? mapValues(raw.addresses, (address, key) => {
+          if (typeof address === "string") {
+            return {
+              label: startCase(key),
+              address: new PublicKey(address),
+            };
+          }
+          const { ["description-link"]: descriptionLink, ...addressProps } =
+            address;
+          return {
+            ...addressProps,
+            descriptionLink,
+            address: new PublicKey(address.address),
+          };
+        })
+      : undefined,
   };
 };
