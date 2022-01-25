@@ -11,7 +11,7 @@ import type {
   QuarryConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
-import { fetchGovTokenInfo } from "../utils/getTokenInfo";
+import { getTokenInfo } from "../utils/getTokenInfo";
 import type { GovernanceRaw, GovernorConfigRaw, QuarryRaw } from "./types";
 import { validateTokenInfo } from "./validate";
 
@@ -32,10 +32,7 @@ const parseGovernance = async ({
 
   const govTokenAddress = token?.address;
   invariant(govTokenAddress);
-  const prepopulatedTokenInfo = await fetchGovTokenInfo(
-    govTokenAddress,
-    network
-  );
+  const prepopulatedTokenInfo = await getTokenInfo(govTokenAddress, network);
   const validatedIconURL =
     iconURL ?? token?.logoURI ?? prepopulatedTokenInfo?.logoURI;
   invariant(validatedIconURL);

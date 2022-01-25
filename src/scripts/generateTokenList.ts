@@ -4,7 +4,7 @@ import * as fs from "fs/promises";
 import { stableStringify } from "../utils/serialize";
 
 /**
- * Fetches all swaps from the chain, summarizing important addresses.
+ * Fetches the token list from GitHub.
  */
 const fetchTokens = async (): Promise<void> => {
   const allTokens = await new GitHubTokenListResolutionStrategy().resolve();

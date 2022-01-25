@@ -3,7 +3,7 @@ import type { TokenInfo } from "@saberhq/token-utils";
 import { networkToChainId } from "@saberhq/token-utils";
 import * as fs from "fs/promises";
 
-export const fetchGovTokenInfo = async (
+export const getTokenInfo = async (
   address: string,
   network?: Network
 ): Promise<TokenInfo | undefined> => {
