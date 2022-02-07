@@ -13,3 +13,6 @@ app = "https://app.pole.finance"
 
 [quarry]
 rewarder = "3ahWtCwoyv4HHYdDtSzSPzD8DDo6jJKqEmPJrdztFnw4"
+
+[quarry.gauge]
+gaugemeister = "GbaiXZj8qmBA6aRScfDTx23K9VX2AgQqfJ74qdTtDHUr"
