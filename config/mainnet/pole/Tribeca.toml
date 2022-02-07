@@ -6,3 +6,10 @@ description = "Leveraged Yield Aggregator on Solana"
 
 [governance.token]
 address = "PoLEXM5xikzieXENFvP7WwHJPorcFiCUVuMo9BAGZT3"
+
+[links]
+website = "https://pole.finance"
+app = "https://app.pole.finance"
+
+[quarry]
+rewarder = "3ahWtCwoyv4HHYdDtSzSPzD8DDo6jJKqEmPJrdztFnw4"
