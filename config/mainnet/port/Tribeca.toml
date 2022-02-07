@@ -16,6 +16,7 @@ medium = "https://medium.com/port-finance"
 twitter = "https://twitter.com/port_finance"
 
 [quarry]
+rewarder = "GuHrjvzqDvLTB27ebd9iFKwceCxKvSswzTByDQUTsvdm"
 mint-wrapper = "HV5q5fTPSQUugUg1xhNQkeviG1g9TL7SSANBizL6xx3W"
 
 [quarry.gauge]
