@@ -10,6 +10,10 @@ address = "PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y"
 [links]
 website = "https://port.finance"
 app = "https://mainnet.port.finance"
+discord = "https://discord.gg/nAMXAYhTb2"
+github = "https://github.com/port-finance/"
+medium = "https://medium.com/port-finance"
+twitter = "https://twitter.com/port_finance"
 
 [quarry]
 mint-wrapper = "HV5q5fTPSQUugUg1xhNQkeviG1g9TL7SSANBizL6xx3W"
