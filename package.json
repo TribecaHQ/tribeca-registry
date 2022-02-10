@@ -7,7 +7,7 @@
     "@rushstack/eslint-patch": "^1.1.0",
     "@saberhq/eslint-config": "^1.12.35",
     "@saberhq/solana-contrib": "^1.12.35",
-    "@saberhq/token-utils": "^1.12.35",
+    "@saberhq/token-utils": "^1.12.41",
     "@saberhq/tsconfig": "^1.12.35",
     "@solana/spl-token-registry": "^0.2.1752",
     "@solana/web3.js": "^1.32.0",
