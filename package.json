@@ -9,7 +9,7 @@
     "@saberhq/solana-contrib": "^1.12.35",
     "@saberhq/token-utils": "^1.12.35",
     "@saberhq/tsconfig": "^1.12.35",
-    "@solana/spl-token-registry": "^0.2.1752",
+    "@solana/spl-token-registry": "^0.2.2421",
     "@solana/web3.js": "^1.32.0",
     "@types/bn.js": "^5.1.0",
     "@types/eslint": "^8.4.1",
