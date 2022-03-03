@@ -1,7 +1,22 @@
 {
   "name": "@tribecahq/registry",
   "description": "Registry of Tribeca DAOs.",
-  "private": true,
+  "version": "0.0.1",
+  "keywords": [
+    "solana",
+    "tribeca",
+    "governance"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "repository": "git@github.com:TribecaHQ/tribeca-registry.git",
+  "author": "Tribeca Team <team@tribeca.so>",
+  "bugs": {
+    "url": "https://github.com/TribecaHQ/tribeca-registry/issues",
+    "email": "team@tribeca.so"
+  },
+  "homepage": "https://tribeca.so",
+  "license": "Apache-2.0",
   "packageManager": "yarn@3.2.0",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",

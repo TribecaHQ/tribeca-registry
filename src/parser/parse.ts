@@ -128,6 +128,13 @@ const parseSAVE = ({ mint, duration }: SAVERaw): SAVEConfig => ({
   duration,
 });
 
+/**
+ * Parses the raw configuration of a Governor into something more useful.
+ *
+ * @param raw Raw data.
+ * @param cluster Cluster that the Governor is on.
+ * @returns
+ */
 export const parseGovernorConfig = async (
   raw: GovernorConfigRaw,
   cluster: Cluster

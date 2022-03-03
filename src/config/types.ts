@@ -122,7 +122,13 @@ export interface GovernorConfig {
    * Governance configuration.
    */
   governance: GovernanceConfig;
+  /**
+   * Proposals configuration.
+   */
   proposals?: ProposalsConfig;
+  /**
+   * Quarry configuration.
+   */
   quarry?: QuarryConfig;
   /**
    * Outstanding SAVE tokens.

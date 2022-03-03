@@ -148,7 +148,7 @@ export interface SAVERaw {
 }
 
 /**
- * Configuration of a Governor.
+ * Raw JSON representation of the configuration of a Governor.
  */
 export interface GovernorConfigRaw extends GovernanceConfigDeprecatedRaw {
   site?: SiteConfigRaw;
