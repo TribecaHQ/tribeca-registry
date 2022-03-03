@@ -71,6 +71,20 @@ export interface QuarryConfig {
 }
 
 /**
+ * SAVEs for the DAO membership token.
+ */
+export interface SAVEConfig {
+  /**
+   * Mint of the SAVE.
+   */
+  mint: PublicKey;
+  /**
+   * Minimum lock duration of the SAVE, in seconds.
+   */
+  duration: number;
+}
+
+/**
  * Configuration of a Governor.
  */
 export interface GovernorConfig {
@@ -110,6 +124,10 @@ export interface GovernorConfig {
   governance: GovernanceConfig;
   proposals?: ProposalsConfig;
   quarry?: QuarryConfig;
+  /**
+   * Outstanding SAVE tokens.
+   */
+  saves?: SAVEConfig[];
 
   /**
    * Settings for minting tokens as the DAO. Enabling this allows DAO members to create "mint" proposals which can be used for grants.

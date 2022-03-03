@@ -142,6 +142,11 @@ interface SiteConfigRaw {
   cluster: Cluster;
 }
 
+export interface SAVERaw {
+  mint: string;
+  duration: number;
+}
+
 /**
  * Configuration of a Governor.
  */
@@ -149,6 +154,10 @@ export interface GovernorConfigRaw extends GovernanceConfigDeprecatedRaw {
   site?: SiteConfigRaw;
   governance: GovernanceRaw;
   proposals?: ProposalsRaw;
+  /**
+   * Outstanding SAVE tokens.
+   */
+  saves?: SAVERaw[];
   /**
    * Quarry configuration
    */
