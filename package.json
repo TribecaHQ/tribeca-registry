@@ -1,7 +1,7 @@
 {
   "name": "@tribecahq/registry",
   "description": "Registry of Tribeca DAOs.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": [
     "solana",
     "tribeca",
