@@ -15,6 +15,9 @@
     "url": "https://github.com/TribecaHQ/tribeca-registry/issues",
     "email": "team@tribeca.so"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://tribeca.so",
   "license": "Apache-2.0",
   "packageManager": "yarn@3.2.0",
