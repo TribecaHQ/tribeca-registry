@@ -19,3 +19,7 @@ github = "https://github.com/saber-hq"
 medium = "https://blog.saber.so"
 twitter = "https://twitter.com/saber_hq"
 website = "https://saber.so"
+
+[[saves]]
+mint = "ESm4AoqMaJ8aJR6nNvd7h45hcv83VpC9G6awj8CiDUBT"
+duration = 31_536_000 # 1 year

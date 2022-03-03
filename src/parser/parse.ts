@@ -9,10 +9,16 @@ import type {
   GovernanceConfig,
   GovernorConfig,
   QuarryConfig,
+  SAVEConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
 import { getTokenInfo } from "../utils/getTokenInfo";
-import type { GovernanceRaw, GovernorConfigRaw, QuarryRaw } from "./types";
+import type {
+  GovernanceRaw,
+  GovernorConfigRaw,
+  QuarryRaw,
+  SAVERaw,
+} from "./types";
 import { validateTokenInfo } from "./validate";
 
 const parseGovernance = async ({
@@ -117,6 +123,11 @@ const parseQuarry = ({
   };
 };
 
+const parseSAVE = ({ mint, duration }: SAVERaw): SAVEConfig => ({
+  mint: new PublicKey(mint),
+  duration,
+});
+
 export const parseGovernorConfig = async (
   raw: GovernorConfigRaw,
   cluster: Cluster
@@ -137,6 +148,7 @@ export const parseGovernorConfig = async (
     governance,
     proposals: raw.proposals,
     quarry,
+    saves: raw.saves ? raw.saves.map(parseSAVE) : undefined,
     minter: quarry
       ? {
           mintWrapper: quarry?.mintWrapper,
