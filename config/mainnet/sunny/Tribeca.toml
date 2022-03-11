@@ -25,9 +25,9 @@ gaugemeister = "GBYZGgJks1re9BkJ8RB5QUMmmoyb7MsQ9ABFrgX5c5GZ"
 
 [proposals]
 notice = """\
-To create a proposal, first make a post on the [Sunny Aggregator Governance Forum](https://github.com/SunnyAggregator/forums/discussions/new?category=dao-proposals).
+To create a proposal, first make a post on the [Sunny Aggregator Governance Forum](https://github.com/SunnyAggregator/governance/issues/new?assignees=&labels=&template=governance-proposal.md&title=%5BPROPOSAL%5D).
 
 Once you have determined that there is sufficient community support,
 add the link to the discussion thread and create a proposal.
 """
-discussion = { required = true, link = "https://github.com/SunnyAggregator/forum/discussions/categories/dao-proposals", prefix = "https://github.com/SunnyAggregator/forum/discussions" }
+discussion = { required = true, link = "https://github.com/SunnyAggregator/governance/labels/proposal", prefix = "https://github.com/SunnyAggregator/governance/issues/" }
