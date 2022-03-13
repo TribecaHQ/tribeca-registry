@@ -28,3 +28,4 @@ jobs:
             ${{ runner.os }}-modules-
       - run: yarn install
       - run: yarn build
+      - run: yarn generate
