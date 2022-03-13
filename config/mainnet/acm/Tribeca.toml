@@ -1,0 +1,27 @@
+[governance]
+network = "mainnet-beta"
+slug = "acm"
+name = "Acumen DAO"
+address = "8VfcdkmBt9ewPr3XzBP9zYVsAqgKSmB7yD4SH5CoFkdt"
+description = "Acumen Leverages DeFi to bridge crypto and traditional assets to democratize access to capital globally."
+
+[governance.token]
+address = "ACUMENkbnxQPAsN8XrNA11sY3NmXDNKVCqS82EiDqMYB"
+
+# DAO addresses to track.
+[addresses]
+governor = "8VfcdkmBt9ewPr3XzBP9zYVsAqgKSmB7yD4SH5CoFkdt"
+electorate = "D4gX75K5T4fkAfcE38bd58DnWzcwsoUXf8sBVYFtQMro"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "CVed3YWncwN4Be5fK7CDQ8FSSsAjeZ1KdXL2sTYdxSyt"
+
+
+[links]
+website = "https://acumen.network"
+discord = "https://discord.gg/fs8VqCFfRy"
+github = "https://github.com/AcumenProtocol/"
+medium = "https://acumenofficial.medium.com/"
+twitter = "https://twitter.com/saber_hq"
