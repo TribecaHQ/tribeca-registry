@@ -55,14 +55,15 @@ export interface ProposalsConfig {
 export interface QuarryConfig {
   hidden?: boolean;
   rewarder?: PublicKey;
+  additionalRewarders: readonly PublicKey[];
   mintWrapper?: PublicKey;
   redeemer?: PublicKey;
-  features: string[];
+  features: readonly string[];
 
   operator?: {
     hidden?: boolean;
     address: PublicKey;
-    features: string[];
+    features: readonly string[];
   };
   gauge?: {
     hidden?: boolean;

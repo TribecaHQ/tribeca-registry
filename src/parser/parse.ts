@@ -94,6 +94,7 @@ const parseGovernance = async ({
 
 const parseQuarry = ({
   rewarder,
+  "additional-rewarders": additionalRewarders,
   redeemer,
   "mint-wrapper": mintWrapper,
   operator,
@@ -106,6 +107,8 @@ const parseQuarry = ({
     mintWrapper: mintWrapper ? new PublicKey(mintWrapper) : undefined,
     redeemer: redeemer ? new PublicKey(redeemer) : undefined,
     features: features ?? [],
+    additionalRewarders:
+      additionalRewarders?.map((rew) => new PublicKey(rew)) ?? [],
     gauge: gauge
       ? {
           ...gauge,

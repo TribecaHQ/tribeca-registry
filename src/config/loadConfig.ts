@@ -10,11 +10,12 @@ import type {
 
 type QuarryConfigJSON = Omit<
   QuarryConfig,
-  "rewarder" | "mintWrapper" | "redeemer"
+  "rewarder" | "mintWrapper" | "redeemer" | "additionalRewarders"
 > & {
   rewarder?: string;
   mintWrapper?: string;
   redeemer?: string;
+  additionalRewarders: readonly string[];
 };
 
 export interface GovernorConfigJSON
@@ -52,6 +53,7 @@ const loadQuarryConfig = ({
   rewarder,
   mintWrapper,
   redeemer,
+  additionalRewarders,
   ...rest
 }: QuarryConfigJSON): QuarryConfig => {
   return {
@@ -59,6 +61,7 @@ const loadQuarryConfig = ({
     rewarder: rewarder ? new PublicKey(rewarder) : undefined,
     mintWrapper: mintWrapper ? new PublicKey(mintWrapper) : undefined,
     redeemer: redeemer ? new PublicKey(redeemer) : undefined,
+    additionalRewarders: additionalRewarders.map((rew) => new PublicKey(rew)),
   };
 };
 

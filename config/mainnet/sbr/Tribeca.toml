@@ -68,6 +68,13 @@ rewarder = "rXhAofQCT7NN9TUqigyEAUzV1uLL4boeD8CRkNBSkYk"
 mint-wrapper = "EVVDA3ZiAjTizemLGXNUN3gb6cffQFEYkFjFZokPmUPz"
 redeemer = "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU"
 features = ["issue-tokens"]
+# other rewarders managed (or jointly managed) by the Saber team
+additional-rewarders = [
+    "2UsGfm8S36eW58U4JeKgVC9fcXsqf7D6vfm4GHUtnENn",
+    "CXer5v3osVQFDWUB3SJUPB1PN1dB3dQSQfymyAnmCryp",
+    "Wz2Zzi5BHmYr75yNzJG8NZ8U1T9cSWKf6ATRwZF7qV6",
+    "9eNj2Y4YdqM9Unw8qTm8kzx1Xt64Rft8a6HjvpkPL7QJ"
+]
 
 [quarry.operator]
 address = "GdW7Accmjusk8qKUPoCMJasEje63h97igqkjdEpacpRN"

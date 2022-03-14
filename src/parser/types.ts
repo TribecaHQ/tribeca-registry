@@ -78,6 +78,7 @@ export interface QuarryRaw {
   hidden?: boolean;
   rewarder?: string;
   ["mint-wrapper"]?: string;
+  ["additional-rewarders"]?: readonly string[];
   redeemer?: string;
   features?: string[];
 
