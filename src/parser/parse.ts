@@ -10,6 +10,7 @@ import type {
   GovernorConfig,
   QuarryConfig,
   SAVEConfig,
+  TokenLockerConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
 import { getTokenInfo } from "../utils/getTokenInfo";
@@ -18,6 +19,7 @@ import type {
   GovernorConfigRaw,
   QuarryRaw,
   SAVERaw,
+  TokenLockerRaw,
 } from "./types";
 import { validateTokenInfo } from "./validate";
 
@@ -131,6 +133,18 @@ const parseSAVE = ({ mint, duration }: SAVERaw): SAVEConfig => ({
   duration,
 });
 
+const parseTokenLocker = ({
+  address,
+  creators,
+  docs,
+  app,
+}: TokenLockerRaw): TokenLockerConfig => ({
+  address: new PublicKey(address),
+  creators: creators.map((c) => new PublicKey(c)),
+  docs,
+  app,
+});
+
 /**
  * Parses the raw configuration of a Governor into something more useful.
  *
@@ -171,6 +185,7 @@ export const parseGovernorConfig = async (
           hidden: quarry.gauge.hidden,
         }
       : undefined,
+    tokenLocker: raw.locker ? parseTokenLocker(raw.locker) : undefined,
     links: raw.links
       ? mapValues(raw.links, (link, key) => {
           if (typeof link === "string") {

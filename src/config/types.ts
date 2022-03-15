@@ -85,6 +85,13 @@ export interface SAVEConfig {
   duration: number;
 }
 
+export interface TokenLockerConfig {
+  address: PublicKey;
+  creators: PublicKey[];
+  docs: string;
+  app: string;
+}
+
 /**
  * Configuration of a Governor.
  */
@@ -135,6 +142,10 @@ export interface GovernorConfig {
    * Outstanding SAVE tokens.
    */
   saves?: SAVEConfig[];
+  /**
+   * Token voter configutation.
+   */
+  tokenLocker?: TokenLockerConfig;
 
   /**
    * Settings for minting tokens as the DAO. Enabling this allows DAO members to create "mint" proposals which can be used for grants.

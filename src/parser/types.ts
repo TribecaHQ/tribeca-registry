@@ -148,6 +148,13 @@ export interface SAVERaw {
   duration: number;
 }
 
+export interface TokenLockerRaw {
+  address: string;
+  creators: string[];
+  docs: string;
+  app: string;
+}
+
 /**
  * Raw JSON representation of the configuration of a Governor.
  */
@@ -163,6 +170,10 @@ export interface GovernorConfigRaw extends GovernanceConfigDeprecatedRaw {
    * Quarry configuration
    */
   quarry?: QuarryRaw;
+  /**
+   * Token voter configuration.
+   */
+  locker?: TokenLockerRaw;
   /**
    * Various links.
    */

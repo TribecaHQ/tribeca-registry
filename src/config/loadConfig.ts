@@ -21,7 +21,13 @@ type QuarryConfigJSON = Omit<
 export interface GovernorConfigJSON
   extends Omit<
     GovernorConfig,
-    "address" | "governance" | "quarry" | "saves" | "minter" | "gauge"
+    | "address"
+    | "governance"
+    | "quarry"
+    | "saves"
+    | "minter"
+    | "gauge"
+    | "tokenLocker"
   > {
   address: string;
   governance: Omit<GovernanceConfig, "address" | "parameters"> & {
@@ -46,6 +52,12 @@ export interface GovernorConfigJSON
   };
   gauge?: Omit<GovernorConfig["gauge"], "gaugemeister"> & {
     gaugemeister: string;
+  };
+  tokenLocker?: {
+    address: string;
+    creators: string[];
+    docs: string;
+    app: string;
   };
 }
 
@@ -76,6 +88,7 @@ export const loadGovernorConfig = ({
   saves,
   minter,
   gauge,
+  tokenLocker,
   ...rest
 }: GovernorConfigJSON): GovernorConfig => {
   return {
@@ -111,6 +124,13 @@ export const loadGovernorConfig = ({
       ? {
           ...gauge,
           gaugemeister: new PublicKey(gauge.gaugemeister),
+        }
+      : undefined,
+    tokenLocker: tokenLocker
+      ? {
+          ...tokenLocker,
+          address: new PublicKey(tokenLocker.address),
+          creators: tokenLocker.creators.map((c) => new PublicKey(c)),
         }
       : undefined,
     ...rest,
