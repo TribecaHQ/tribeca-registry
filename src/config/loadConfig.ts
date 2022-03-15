@@ -27,7 +27,7 @@ export interface GovernorConfigJSON
     | "saves"
     | "minter"
     | "gauge"
-    | "tokenVoter"
+    | "tokenLocker"
   > {
   address: string;
   governance: Omit<GovernanceConfig, "address" | "parameters"> & {
@@ -53,7 +53,7 @@ export interface GovernorConfigJSON
   gauge?: Omit<GovernorConfig["gauge"], "gaugemeister"> & {
     gaugemeister: string;
   };
-  tokenVoter?: {
+  tokenLocker?: {
     address: string;
     creators: string[];
     docs: string;
@@ -88,7 +88,7 @@ export const loadGovernorConfig = ({
   saves,
   minter,
   gauge,
-  tokenVoter,
+  tokenLocker,
   ...rest
 }: GovernorConfigJSON): GovernorConfig => {
   return {
@@ -126,11 +126,11 @@ export const loadGovernorConfig = ({
           gaugemeister: new PublicKey(gauge.gaugemeister),
         }
       : undefined,
-    tokenVoter: tokenVoter
+    tokenLocker: tokenLocker
       ? {
-          ...tokenVoter,
-          address: new PublicKey(tokenVoter.address),
-          creators: tokenVoter.creators.map((c) => new PublicKey(c)),
+          ...tokenLocker,
+          address: new PublicKey(tokenLocker.address),
+          creators: tokenLocker.creators.map((c) => new PublicKey(c)),
         }
       : undefined,
     ...rest,

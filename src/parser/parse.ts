@@ -10,7 +10,7 @@ import type {
   GovernorConfig,
   QuarryConfig,
   SAVEConfig,
-  TokenVoterConfig,
+  TokenLockerConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
 import { getTokenInfo } from "../utils/getTokenInfo";
@@ -19,7 +19,7 @@ import type {
   GovernorConfigRaw,
   QuarryRaw,
   SAVERaw,
-  TokenVoterRaw,
+  TokenLockerRaw,
 } from "./types";
 import { validateTokenInfo } from "./validate";
 
@@ -133,12 +133,12 @@ const parseSAVE = ({ mint, duration }: SAVERaw): SAVEConfig => ({
   duration,
 });
 
-const parseTokenVoter = ({
+const parseTokenLocker = ({
   address,
   creators,
   docs,
   app,
-}: TokenVoterRaw): TokenVoterConfig => ({
+}: TokenLockerRaw): TokenLockerConfig => ({
   address: new PublicKey(address),
   creators: creators.map((c) => new PublicKey(c)),
   docs,
@@ -161,7 +161,6 @@ export const parseGovernorConfig = async (
     network: cluster,
   });
   const quarry = raw.quarry ? parseQuarry(raw.quarry) : undefined;
-  const tokenVoter = raw["token-voter"];
   return {
     slug: governance.slug,
     name: governance.name,
@@ -186,7 +185,7 @@ export const parseGovernorConfig = async (
           hidden: quarry.gauge.hidden,
         }
       : undefined,
-    tokenVoter: tokenVoter ? parseTokenVoter(tokenVoter) : undefined,
+    tokenLocker: raw.locker ? parseTokenLocker(raw.locker) : undefined,
     links: raw.links
       ? mapValues(raw.links, (link, key) => {
           if (typeof link === "string") {

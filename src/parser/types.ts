@@ -148,7 +148,7 @@ export interface SAVERaw {
   duration: number;
 }
 
-export interface TokenVoterRaw {
+export interface TokenLockerRaw {
   address: string;
   creators: string[];
   docs: string;
@@ -173,7 +173,7 @@ export interface GovernorConfigRaw extends GovernanceConfigDeprecatedRaw {
   /**
    * Token voter configuration.
    */
-  ["token-voter"]?: TokenVoterRaw;
+  locker?: TokenLockerRaw;
   /**
    * Various links.
    */
