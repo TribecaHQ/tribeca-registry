@@ -1,0 +1,36 @@
+[governance]
+slug = "mnde"
+name = "Marinade"
+address = "6PVcRWPbKcdDimTZMaoXCoPidCvcVETvUhMYSqAmSKT9"
+description = "Liquidity staking to secure and decentralize Solana"
+iconURL = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
+
+[governance.token]
+address = "MNDEFzGvMt87ueuHvVU9VcTqsAP5b3fTGPsHuuPA5ey"
+name = "Marinade Protocol Token"
+symbol = "MNDE"
+decimals = 9
+logoURI = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
+
+[token-voter]
+address = "AubdDhbn4a1FrJbXoFw1fwLWrrhKm4WMUU9DKX6gkcz6"
+creators = ["4eopmn89uciMvKzGYwkFBMXVpLCjnGda7uWo5uZqQCFF"]
+docs = "https://docs.marinade.finance/governance"
+app = "https://dev.marinade.finance/app/mnde/lock"
+
+[proposals]
+notice = """\
+To create a proposal, first make a post on the [Marinade Governance Forum](https://forum.marinade.finance/).\n\n
+Once you have determined that there is sufficient community support,\n
+add the link to the discussion thread and create a proposal.\n
+"""
+discussion = { required = true, link = "https://forum.marinade.finance/", prefix = "https://forum.marinade.finance/t/" }
+
+[links]
+website = "https://marinade.finance"
+app = "https://marinade.finance/app/staking"
+forum = "https://forum.marinade.finance"
+discord = "https://discord.com/invite/6EtUf4Euu6"
+github = "https://github.com/marinade-finance"
+medium = "https://medium.com/marinade-finance"
+twitter = "https://twitter.com/marinadeFinance"

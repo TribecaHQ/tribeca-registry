@@ -10,6 +10,7 @@ import type {
   GovernorConfig,
   QuarryConfig,
   SAVEConfig,
+  TokenVoterConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
 import { getTokenInfo } from "../utils/getTokenInfo";
@@ -18,6 +19,7 @@ import type {
   GovernorConfigRaw,
   QuarryRaw,
   SAVERaw,
+  TokenVoterRaw,
 } from "./types";
 import { validateTokenInfo } from "./validate";
 
@@ -131,6 +133,18 @@ const parseSAVE = ({ mint, duration }: SAVERaw): SAVEConfig => ({
   duration,
 });
 
+const parseTokenVoter = ({
+  address,
+  creators,
+  docs,
+  app,
+}: TokenVoterRaw): TokenVoterConfig => ({
+  address: new PublicKey(address),
+  creators: creators.map((c) => new PublicKey(c)),
+  docs,
+  app,
+});
+
 /**
  * Parses the raw configuration of a Governor into something more useful.
  *
@@ -147,6 +161,7 @@ export const parseGovernorConfig = async (
     network: cluster,
   });
   const quarry = raw.quarry ? parseQuarry(raw.quarry) : undefined;
+  const tokenVoter = raw["token-voter"];
   return {
     slug: governance.slug,
     name: governance.name,
@@ -171,6 +186,7 @@ export const parseGovernorConfig = async (
           hidden: quarry.gauge.hidden,
         }
       : undefined,
+    tokenVoter: tokenVoter ? parseTokenVoter(tokenVoter) : undefined,
     links: raw.links
       ? mapValues(raw.links, (link, key) => {
           if (typeof link === "string") {
