@@ -8,18 +8,18 @@ import invariant from "tiny-invariant";
 import type {
   GovernanceConfig,
   GovernorConfig,
+  MndeNftLockerConfig,
   QuarryConfig,
   SAVEConfig,
-  TokenLockerConfig,
 } from "../config/types";
 import { TokenQuantity } from "../config/types";
 import { getTokenInfo } from "../utils/getTokenInfo";
 import type {
   GovernanceRaw,
   GovernorConfigRaw,
+  mndeNftLockerRaw,
   QuarryRaw,
   SAVERaw,
-  TokenLockerRaw,
 } from "./types";
 import { validateTokenInfo } from "./validate";
 
@@ -133,12 +133,12 @@ const parseSAVE = ({ mint, duration }: SAVERaw): SAVEConfig => ({
   duration,
 });
 
-const parseTokenLocker = ({
+const parseMndeNftLocker = ({
   address,
   creators,
   docs,
   app,
-}: TokenLockerRaw): TokenLockerConfig => ({
+}: mndeNftLockerRaw): MndeNftLockerConfig => ({
   address: new PublicKey(address),
   creators: creators.map((c) => new PublicKey(c)),
   docs,
@@ -161,6 +161,10 @@ export const parseGovernorConfig = async (
     network: cluster,
   });
   const quarry = raw.quarry ? parseQuarry(raw.quarry) : undefined;
+  const mndeNftLocker = raw["mnde-nft-locker"]
+    ? parseMndeNftLocker(raw["mnde-nft-locker"])
+    : undefined;
+
   return {
     slug: governance.slug,
     name: governance.name,
@@ -185,7 +189,7 @@ export const parseGovernorConfig = async (
           hidden: quarry.gauge.hidden,
         }
       : undefined,
-    tokenLocker: raw.locker ? parseTokenLocker(raw.locker) : undefined,
+    mndeNftLocker,
     links: raw.links
       ? mapValues(raw.links, (link, key) => {
           if (typeof link === "string") {

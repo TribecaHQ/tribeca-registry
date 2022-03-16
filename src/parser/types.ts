@@ -148,7 +148,7 @@ export interface SAVERaw {
   duration: number;
 }
 
-export interface TokenLockerRaw {
+export interface mndeNftLockerRaw {
   address: string;
   creators: string[];
   docs: string;
@@ -173,7 +173,7 @@ export interface GovernorConfigRaw extends GovernanceConfigDeprecatedRaw {
   /**
    * Token voter configuration.
    */
-  locker?: TokenLockerRaw;
+  ["mnde-nft-locker"]?: mndeNftLockerRaw;
   /**
    * Various links.
    */

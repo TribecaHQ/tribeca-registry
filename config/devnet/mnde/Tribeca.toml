@@ -12,7 +12,7 @@ symbol = "MNDE"
 decimals = 9
 logoURI = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
 
-[locker]
+[mnde-nft-locker]
 address = "AubdDhbn4a1FrJbXoFw1fwLWrrhKm4WMUU9DKX6gkcz6"
 creators = ["4eopmn89uciMvKzGYwkFBMXVpLCjnGda7uWo5uZqQCFF"]
 docs = "https://docs.marinade.finance/governance"

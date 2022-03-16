@@ -27,7 +27,7 @@ export interface GovernorConfigJSON
     | "saves"
     | "minter"
     | "gauge"
-    | "tokenLocker"
+    | "mndeNftLocker"
   > {
   address: string;
   governance: Omit<GovernanceConfig, "address" | "parameters"> & {
@@ -53,7 +53,7 @@ export interface GovernorConfigJSON
   gauge?: Omit<GovernorConfig["gauge"], "gaugemeister"> & {
     gaugemeister: string;
   };
-  tokenLocker?: {
+  mndeNftLocker?: {
     address: string;
     creators: string[];
     docs: string;
@@ -88,7 +88,7 @@ export const loadGovernorConfig = ({
   saves,
   minter,
   gauge,
-  tokenLocker,
+  mndeNftLocker,
   ...rest
 }: GovernorConfigJSON): GovernorConfig => {
   return {
@@ -126,11 +126,11 @@ export const loadGovernorConfig = ({
           gaugemeister: new PublicKey(gauge.gaugemeister),
         }
       : undefined,
-    tokenLocker: tokenLocker
+    mndeNftLocker: mndeNftLocker
       ? {
-          ...tokenLocker,
-          address: new PublicKey(tokenLocker.address),
-          creators: tokenLocker.creators.map((c) => new PublicKey(c)),
+          ...mndeNftLocker,
+          address: new PublicKey(mndeNftLocker.address),
+          creators: mndeNftLocker.creators.map((c) => new PublicKey(c)),
         }
       : undefined,
     ...rest,
