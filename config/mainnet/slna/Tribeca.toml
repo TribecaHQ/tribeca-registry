@@ -1,0 +1,37 @@
+[governance]
+network = "mainnet-beta"
+slug = "slna"
+name = "Soluna"
+address = "CbGthriWTbZFYT6Mro1de7hwHLGWC5f8huMjgBuCRUsh"
+description = "The gateway to Anchor interest bearing assets on Solana"
+
+[governance.token]
+address = "SLNAAQ8VT6DRDc3W9UPDjFyRt7u4mzh8Z4WYMDjJc35"
+
+[governance.parameters.governor]
+quorum-votes = 40_000_000_000000
+token-mint = "SLNAAQ8VT6DRDc3W9UPDjFyRt7u4mzh8Z4WYMDjJc35"
+voting-delay = 86_400
+voting-period = 259_200
+timelock-delay = 86_400
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 86_400 # 7 days
+max-stake-duration = 157_680_000 # 5 years
+proposal-activation-min-votes = 1_000_000_000000 # 1M veSLNA / 100k SLNA
+whitelist-enabled = true
+
+[links]
+website = "https://soluna.money"
+discord = "discord.gg/55xvnWrnPr"
+github = "https://github.com/soluna-protocol"
+medium = "https://medium.com/solunadao"
+twitter = "https://twitter.com/solunaDAO"
+
+[quarry]
+rewarder = "AnYPEy4H3U3XhT5hwM4cGPxLk3CNqn9kkqzyaXhj1LKc"
+mint-wrapper = "DvZudaVyiZhpL8W6BnsaFaJp6jWV8nDMhQGfkXKXBpXA"
+
+[quarry.operator]
+address = "H4VXFyfeUDahSokaE9mjGUaP6UDREqyXcjiHWmfq9yQs"
