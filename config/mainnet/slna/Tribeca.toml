@@ -35,3 +35,6 @@ mint-wrapper = "DvZudaVyiZhpL8W6BnsaFaJp6jWV8nDMhQGfkXKXBpXA"
 
 [quarry.operator]
 address = "H4VXFyfeUDahSokaE9mjGUaP6UDREqyXcjiHWmfq9yQs"
+
+[quarry.gauge]
+gaugemeister = "Gc7hPSbWNT8zBwpSCWKcb5gv7WHHqFkTJVsbPWxD2qyA"
