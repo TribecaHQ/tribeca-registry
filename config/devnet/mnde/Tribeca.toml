@@ -1,7 +1,7 @@
 [governance]
 slug = "mnde"
 name = "Marinade"
-address = "6PVcRWPbKcdDimTZMaoXCoPidCvcVETvUhMYSqAmSKT9"
+address = "AgwHBvTzyXC18GGqVs5NqjdxHN61xqJk68Ev4o6GNh9v"
 description = "Liquidity staking to secure and decentralize Solana"
 iconURL = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
 
@@ -13,10 +13,10 @@ decimals = 9
 logoURI = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
 
 [mnde-nft-locker]
-address = "AubdDhbn4a1FrJbXoFw1fwLWrrhKm4WMUU9DKX6gkcz6"
-creators = ["4eopmn89uciMvKzGYwkFBMXVpLCjnGda7uWo5uZqQCFF"]
+address = "rLkgcLK7oQaQMT6GYNvGGuvj3akJWLKXJyHcgh71P1k"
+creators = ["7yQGDJ6Ymcpy13zXZVvQA1gYxB6YnKeQEsGUGJTSptrM"]
 docs = "https://docs.marinade.finance/governance"
-app = "https://dev.marinade.finance/app/mnde/lock"
+app = "https://dev.marinade.finance/app/mnde"
 
 [proposals]
 notice = """\
