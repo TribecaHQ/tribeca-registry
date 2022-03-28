@@ -1,0 +1,62 @@
+[governance]
+network = "mainnet-beta"
+slug = "sdust"
+name = "Solien"
+address = "HdczogoASRJeChYRLUNbMKPRdcDrHYgFg3z3FLz5B6ts"
+description = "Metaverse services and investment DAO"
+
+[governance.token]
+address = "C5EefTmWXHJWFkN3Dh7QyFUnBG3UXSu8h6qVs6xtaLxy"
+
+[governance.parameters.governor]
+quorum-votes = 150_000_000000
+token-mint = "C5EefTmWXHJWFkN3Dh7QyFUnBG3UXSu8h6qVs6xtaLxy"
+voting-delay = 86_400
+voting-period = 259_200
+timelock-delay = 30
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 604_800 # 7 days
+max-stake-duration = 157_680_000 # 5 years
+proposal-activation-min-votes = 50_000_000000 # 10M veSBR / 1M SBR
+whitelist-enabled = true
+
+[site]
+aliases = ["dao.solien.io"]
+
+# DAO addresses to track.
+[addresses]
+governor = "HdczogoASRJeChYRLUNbMKPRdcDrHYgFg3z3FLz5B6ts"
+electorate = "F8y3UhdysUF1MS2posoZVKkRUwf9UYDKttAZpdwz96Tg"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "FWropvQveWS9gRDCV4JaidqzMMmEu4sQMK4JqjVMCV3j"
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "8E4FrgroyxFHZSpjKyV1JUqWEHrutZ4g28QhvE3qRyJd"
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "74DYnFGWo7cCvmbho6szAaqW8PozYBX8uj5wgqFNMNJp"
+
+[proposals]
+notice = """\
+To create a proposal, first make a post on the [Solien Governance Forum](https://forum.solien.io/c/governance/6).
+
+Once you have determined that there is sufficient community support,
+add the link to the discussion thread and create a proposal.
+"""
+discussion = { required = true, link = "https://forum.solien.io/c/governance/5", prefix = "https://forum.solien.io/t/" }
+
+[links]
+website = "https://solien.io/"
+app = "https://app.solien.io/"
+forum = "https://forum.solien.io/"
+discord = "https://discord.gg/FrtBMHFE"
+twitter = "https://twitter.com/soliensnft"
