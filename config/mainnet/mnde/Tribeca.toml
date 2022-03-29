@@ -1,0 +1,62 @@
+[governance]
+network = "mainnet-beta"
+slug = "mnde"
+name = "Marinade"
+address = "H7SKkK7Gkk1XpcEdLH3p1ADsi8TMVPR3uFeAgefpFDdH"
+description = "Liquidity staking to secure and decentralize Solana"
+iconURL = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
+
+[governance.token]
+address = "MNDEFzGvMt87ueuHvVU9VcTqsAP5b3fTGPsHuuPA5ey"
+name = "Marinade Protocol Token"
+symbol = "MNDE"
+decimals = 9
+logoURI = "https://raw.githubusercontent.com/marinade-finance/liquid-staking-program/main/Docs/img/MNDE.png"
+
+[governance.parameters.governor]
+quorum-votes = 7_000_000_000000000
+token-mint = "MNDEFzGvMt87ueuHvVU9VcTqsAP5b3fTGPsHuuPA5ey"
+voting-delay = 86_400 # 1 day
+voting-period = 432_000 # 5 days
+timelock-delay = 432_000 # 5 days
+
+[mnde-nft-locker]
+address = "rLmyBAjCYR1MNc3KSG77y5XXT2DuMxkcxfqLYvjjJCs"
+creators = ["6jG2QcwaJPFS8Y9SzgH2kfKPj6ERhLi9RVtH8kRahj4j"]
+docs = "https://docs.marinade.finance/governance"
+app = "https://marinade.finance/app/mnde"
+
+[addresses]
+governor = "H7SKkK7Gkk1XpcEdLH3p1ADsi8TMVPR3uFeAgefpFDdH"
+electorate = "8Kua5bEUcFQmTQTpj2xLh1Zgen48sLCpoxV1LjZtRAet"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "7YPYKMRF7Lx13L3XqgDbDoMRbU2Z3NLoGyJrDaVQ5P3T"
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "D1FxNyGYVhUFKkdA13CYzzFWoo4tyMkVRmv7CWaAnrJs"
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "7YPYKMRF7Lx13L3XqgDbDoMRbU2Z3NLoGyJrDaVQ5P3T"
+
+[proposals]
+notice = """\
+To create a proposal, first make a post on the [Marinade Governance Forum](https://forum.marinade.finance/).\n\n
+Once you have determined that there is sufficient community support, add the link to the discussion thread and create a proposal.
+"""
+discussion = { required = true, link = "https://forum.marinade.finance/", prefix = "https://forum.marinade.finance/t/" }
+
+[links]
+website = "https://marinade.finance"
+app = "https://marinade.finance/app/staking"
+forum = "https://forum.marinade.finance"
+discord = "https://discord.com/invite/6EtUf4Euu6"
+github = "https://github.com/marinade-finance"
+medium = "https://medium.com/marinade-finance"
+twitter = "https://twitter.com/marinadeFinance"
