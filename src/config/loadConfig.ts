@@ -1,4 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
+import { mapValues } from "lodash";
 
 import type {
   GovernanceConfig,
@@ -6,6 +7,7 @@ import type {
   GovernorParameters,
   LockerParameters,
   QuarryConfig,
+  TrackedAccountInfo,
 } from "./types";
 
 type QuarryConfigJSON = Omit<
@@ -18,6 +20,13 @@ type QuarryConfigJSON = Omit<
   additionalRewarders: readonly string[];
 };
 
+/**
+ * An address tracked by the DAO.
+ */
+interface TrackedAccountInfoJSON extends Omit<TrackedAccountInfo, "address"> {
+  address: string;
+}
+
 export interface GovernorConfigJSON
   extends Omit<
     GovernorConfig,
@@ -28,6 +37,7 @@ export interface GovernorConfigJSON
     | "minter"
     | "gauge"
     | "mndeNftLocker"
+    | "addresses"
   > {
   address: string;
   governance: Omit<GovernanceConfig, "address" | "parameters"> & {
@@ -59,6 +69,7 @@ export interface GovernorConfigJSON
     docs: string;
     app: string;
   };
+  addresses?: Record<string, TrackedAccountInfoJSON>;
 }
 
 const loadQuarryConfig = ({
@@ -77,6 +88,15 @@ const loadQuarryConfig = ({
   };
 };
 
+const loadTrackedAccountInfo = (
+  infos: Record<string, TrackedAccountInfoJSON>
+): Record<string, TrackedAccountInfo> => {
+  return mapValues(infos, ({ address, ...info }) => ({
+    ...info,
+    address: new PublicKey(address),
+  }));
+};
+
 /**
  * Loads a Governor from its JSON representation.
  * @returns
@@ -89,6 +109,7 @@ export const loadGovernorConfig = ({
   minter,
   gauge,
   mndeNftLocker,
+  addresses,
   ...rest
 }: GovernorConfigJSON): GovernorConfig => {
   return {
@@ -134,5 +155,6 @@ export const loadGovernorConfig = ({
         }
       : undefined,
     ...rest,
+    addresses: addresses ? loadTrackedAccountInfo(addresses) : undefined,
   };
 };

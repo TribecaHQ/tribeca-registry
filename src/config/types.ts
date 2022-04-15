@@ -103,17 +103,23 @@ export const ADDRESS_TYPES = ["smart-wallet"] as const;
 export type AddressType = typeof ADDRESS_TYPES[number];
 
 /**
- * An address tracked by the DAO.
+ * An account tracked by the DAO.
  */
-export interface AddressInfo {
+export interface TrackedAccountInfo {
   /**
    * Human-readable label of what the address is.
    */
   label: string;
+  /**
+   * Type of the tracked account.
+   */
   type?: AddressType;
+  /**
+   * Address of the account.
+   */
   address: PublicKey;
   /**
-   * Detailed description of what this address is used for.
+   * Detailed description of what this account is used for.
    */
   description?: string;
   descriptionLink?: string;
@@ -213,5 +219,5 @@ export interface GovernorConfig {
   /**
    * Known addresses.
    */
-  addresses?: Record<string, AddressInfo>;
+  addresses?: Record<string, TrackedAccountInfo>;
 }
