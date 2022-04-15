@@ -6,13 +6,14 @@ import { mapValues, startCase } from "lodash";
 import invariant from "tiny-invariant";
 
 import type {
+  AddressType,
   GovernanceConfig,
   GovernorConfig,
   MndeNftLockerConfig,
   QuarryConfig,
   SAVEConfig,
 } from "../config/types";
-import { TokenQuantity } from "../config/types";
+import { ADDRESS_TYPES, TokenQuantity } from "../config/types";
 import { getTokenInfo } from "../utils/getTokenInfo";
 import type {
   GovernanceRaw,
@@ -209,10 +210,19 @@ export const parseGovernorConfig = async (
               address: new PublicKey(address),
             };
           }
-          const { ["description-link"]: descriptionLink, ...addressProps } =
-            address;
+          const {
+            ["description-link"]: descriptionLink,
+            type,
+            ...addressProps
+          } = address;
+          if (type && !ADDRESS_TYPES.includes(type)) {
+            throw new Error(
+              `invalid type ${type} for address ${address.address}`
+            );
+          }
           return {
             ...addressProps,
+            type: type as AddressType,
             descriptionLink,
             address: new PublicKey(address.address),
           };

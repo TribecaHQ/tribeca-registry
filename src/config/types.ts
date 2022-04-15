@@ -93,6 +93,33 @@ export interface MndeNftLockerConfig {
 }
 
 /**
+ * Iterable list of {@link AddressType}s.
+ */
+export const ADDRESS_TYPES = ["smart-wallet"] as const;
+
+/**
+ * Type of tracked address.
+ */
+export type AddressType = typeof ADDRESS_TYPES[number];
+
+/**
+ * An address tracked by the DAO.
+ */
+export interface AddressInfo {
+  /**
+   * Human-readable label of what the address is.
+   */
+  label: string;
+  type?: AddressType;
+  address: PublicKey;
+  /**
+   * Detailed description of what this address is used for.
+   */
+  description?: string;
+  descriptionLink?: string;
+}
+
+/**
  * Configuration of a Governor.
  */
 export interface GovernorConfig {
@@ -183,14 +210,8 @@ export interface GovernorConfig {
    */
   links?: Record<string, { label: string; url: string }>;
 
-  addresses?: Record<
-    string,
-    {
-      label: string;
-      type?: "smart-wallet";
-      address: PublicKey;
-      description?: string;
-      descriptionLink?: string;
-    }
-  >;
+  /**
+   * Known addresses.
+   */
+  addresses?: Record<string, AddressInfo>;
 }

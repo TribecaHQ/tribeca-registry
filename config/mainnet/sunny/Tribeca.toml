@@ -5,6 +5,12 @@ name = "Sunny Aggregator"
 address = "8NDDbatDi5WxB433q3qyMMMYvjodMkCenGdTjkxuASyE"
 description = "Solana's cross-chain DeFi yield aggregator."
 
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "FE61NQa1pz2axEaxdySK4ZZQdo8sastWx3xN8ZCxXfGM"
+description = "Multisig which can override the vote governance process in case of emergency."
+
 [governance.token]
 address = "SUNNYWgPQmFxe9wTZzNK7iPnJ3vYDrkgnxJRJm1s3ag"
 
