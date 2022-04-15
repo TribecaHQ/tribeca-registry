@@ -1,5 +1,5 @@
 import type { Network } from "@saberhq/solana-contrib";
-import type { TokenInfo } from "@saberhq/token-utils";
+import type { TokenInfo, TokenList } from "@saberhq/token-utils";
 import { networkToChainId } from "@saberhq/token-utils";
 import * as fs from "fs/promises";
 
@@ -10,13 +10,13 @@ export const getTokenInfo = async (
   const tokenListRaw = await fs.readFile(
     `${__dirname}/../../solana-token-list.json`
   );
-  const tokenList = JSON.parse(tokenListRaw.toString()) as TokenInfo[];
+  const { tokens } = JSON.parse(tokenListRaw.toString()) as TokenList;
   if (!network) {
-    return tokenList.find((tok) => tok.address === address);
+    return tokens.find((tok) => tok.address === address);
   }
 
   const chainId = networkToChainId(network);
-  return tokenList.find(
+  return tokens.find(
     (tok) => tok.chainId === chainId && tok.address === address
   );
 };
