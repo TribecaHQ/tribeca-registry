@@ -1,0 +1,55 @@
+# .config/mainnet/fab/Tribeca.toml
+
+[governance]
+network = "mainnet-beta"
+slug = "fab"
+name = "Fabric"
+address = "CKRFN8znjVo4WRmsdJ51UqVDPopYySR6mwJ9NwW7CCDJ"
+description = "Tokenised synthetics on Solana"
+
+[governance.token]
+address = "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96"
+
+[governance.parameters.governor]
+quorum-votes = 12000000000000000 # 12M veFAB / 1.2M FAB
+token-mint = "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96"
+voting-delay = 86_400
+voting-period = 259_200
+timelock-delay = 86_400
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 259_200 # 3 days
+max-stake-duration = 157_680_000 # 5 years
+proposal-activation-min-votes = 1000000000000000 # 1M veFAB / 100K FAB
+whitelist-enabled = true
+
+[site]
+aliases = ["dao.fsynth.io"]
+
+[addresses]
+governor = "CKRFN8znjVo4WRmsdJ51UqVDPopYySR6mwJ9NwW7CCDJ"
+electorate = "DWDmk7SKAEcNL57otur2d4y3vXQjpSqUdLdJef2w91XX"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "5u9sfC9dn76oudFMBHAA1x8Cgbnjy7NRZGrQ2M36kT84"
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "FgstL61BakncvWGNFwRE4agwWJqPRXMtY7MqzqtGn1mt"
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "A583QaEipLfeECJ9txe1hxagsFhmSNnv1moSzNuLtrnM"
+
+[links]
+website = "https://fsynth.io"
+app = "https://app.fsynth.io"
+discord = "https://discord.gg/fabric"
+github = "https://github.com/fabric-foundation"
+medium = "https://xfabric.medium.com"
+twitter = "https://twitter.com/official_fabric"
