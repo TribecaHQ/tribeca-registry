@@ -70,7 +70,7 @@ const parseGovernance = async ({
           governor: parameters.governor
             ? {
                 quorumVotes: new TokenQuantity(
-                  parameters.governor["quorum-votes"]
+                  parameters.governor["quorum-votes"].toString()
                 ),
                 votingDelay: parameters.governor["voting-delay"],
                 votingPeriod: parameters.governor["voting-period"],
@@ -84,7 +84,7 @@ const parseGovernance = async ({
                 minStakeDuration: parameters.locker?.["min-stake-duration"],
                 maxStakeDuration: parameters.locker?.["max-stake-duration"],
                 proposalActivationMinVotes: new TokenQuantity(
-                  parameters.locker["proposal-activation-min-votes"]
+                  parameters.locker["proposal-activation-min-votes"].toString()
                 ),
                 whitelistEnabled:
                   parameters.locker?.["whitelist-enabled"] ?? false,

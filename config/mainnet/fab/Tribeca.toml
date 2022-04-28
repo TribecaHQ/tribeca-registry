@@ -1,5 +1,4 @@
 # .config/mainnet/fab/Tribeca.toml
-
 [governance]
 network = "mainnet-beta"
 slug = "fab"
@@ -11,7 +10,7 @@ description = "Tokenised synthetics on Solana"
 address = "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96"
 
 [governance.parameters.governor]
-quorum-votes = 12000000000000000 # 12M veFAB / 1.2M FAB
+quorum-votes = 12_000_000_000000000 # 12M veFAB / 1.2M FAB
 token-mint = "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96"
 voting-delay = 86_400
 voting-period = 259_200
