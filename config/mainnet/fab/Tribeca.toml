@@ -20,7 +20,7 @@ timelock-delay = 86_400
 max-stake-vote-multiplier = 10
 min-stake-duration = 259_200 # 3 days
 max-stake-duration = 157_680_000 # 5 years
-proposal-activation-min-votes = 1000000000000000 # 1M veFAB / 100K FAB
+proposal-activation-min-votes = 1_000_000_000000000 # 1M veFAB / 100K FAB
 whitelist-enabled = true
 
 [site]
