@@ -1,0 +1,68 @@
+# .config/mainnet/ggatd/Tribeca.toml
+
+[governance]
+network = "devnet"
+slug = "ggatd"
+name = "GGA Test DAO"
+address = "FQFoGJR3maMmgsZMoerEXKsHNWSc3uhMgqRheDXQu7EF"
+description = "Test DAO for GGA"
+
+[governance.token]
+address = "CEZCH6PZjUw8RXfhsS8vSo4wGeoMMhAyzaFWHpXp3tRn"
+name = "GGA DAO Test Token"
+symbol = "GGADTT"
+decimals = 8
+logoURI = "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/CEZCH6PZjUw8RXfhsS8vSo4wGeoMMhAyzaFWHpXp3tRn/logo.png"
+
+[governance.parameters.governor]
+quorum-votes = 4_000_000_00000000
+token-mint = "CEZCH6PZjUw8RXfhsS8vSo4wGeoMMhAyzaFWHpXp3tRn"
+voting-delay = 86_400
+voting-period = 259_200
+timelock-delay = 86_400
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 86_400 # 1 days
+max-stake-duration = 157_680_000 # 5 years
+proposal-activation-min-votes = 100_000_00000000 # 100K veSBR / 10K GGADTT
+whitelist-enabled = true
+
+[site]
+aliases = ["dao.gargantuaindustries.com"]
+
+[addresses]
+governor = "FQFoGJR3maMmgsZMoerEXKsHNWSc3uhMgqRheDXQu7EF"
+electorate = "GBcrkpG6Za6nMFBMRtJqMJSrdGTaHSMRsprBQjrUSUZ7"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "76LNjYf477Fv6wzwcw3sV94G967je4Ps7bWHe1G3RzEx"
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "3Lpz6sCRaqAsuhX2e2Lg2WeDzyJoZWzdhwtnw9UQRr6r"
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "7vZ3nVQZKAaWCJEgHYHEhqpQEJKGYYrVZ1Qc6yC2eEnB"
+
+[proposals]
+notice = """\
+To create a proposal, first make a post on the [GGA Discord](https://discord.gg/k3UtYYzcvu).
+Once you have determined that there is sufficient community support,
+add the link to the discussion thread and create a proposal.
+"""
+discussion = { required = true, link = "https://discord.gg/k3UtYYzcvu", prefix = "https://discord.gg/k3UtYYzcvu" }
+
+[links]
+website = "https://www.gargantuaindustries.com"
+discord = "https://discord.gg/GQXjkzHwVH"
+twitter = "https://twitter.com/Gargantua_Inds"
+youtube = "https://www.youtube.com/channel/UCOmeiHRH84Arqb9z4u5wshg
+instagram = "https://www.instagram.com/gargantua_industries/"
+telegram = "https://t.me/Gargantua_Industries"
+
