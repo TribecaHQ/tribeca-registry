@@ -1,0 +1,56 @@
+# .config/mainnet/cys/Tribeca.toml
+[governance]
+network = "mainnet-beta"
+slug = "cys"
+name = "Cykura"
+address = "cysPXAjehMpVKUapzbMCCnpFxUFFryEWEaLgnb9NrR8"
+description = "Concentrated liquidity AMM on Solana"
+
+[governance.token]
+address = "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96"
+
+[governance.parameters.governor]
+quorum-votes = 2000000000000 # 2M veCYS / 200k CYS
+token-mint = "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96"
+voting-delay = 1
+voting-period = 259_200
+timelock-delay = 1
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 86400 # 1 day
+max-stake-duration = 157_680_000 # 5 years
+proposal-activation-min-votes = 2000000000000 # 2M veCYS / 200K CYS
+whitelist-enabled = true
+
+[site]
+aliases = ["dao.cykura.io"]
+
+[addresses]
+governor = "HnV7iBwe3pfeUdmBwmNir8jDWUunsb7CuGSHnnBdMJBC"
+electorate = "6vGZ4L4QpDDEU8uet6TGJCJZSLcWg2yjRKFkNFumdZUn"
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "4e8ae3uEcfFMA16UL8ZsKiFChKybwTDQtyTaw5Kv4J73"
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "3X9o4aanui8rQVPtYGz1ix8j4qYuJ3aZbWzUsZJGsMK5"
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "9JnDhqwFjbWQteZBuWvM4MZqoPaj1WiccHgRHhtF8KVh"
+
+[links]
+website = "https://cykura.io"
+app = "https://app.cykura.io"
+discord = "http://discord.gg/gyaK56UreX"
+github = "https://github.com/cykura"
+medium = "https://cykura.medium.com/"
+twitter = "https://twitter.com/cykurafi"
+telegram = "https://t.me/cykuraofficialchat"
+
