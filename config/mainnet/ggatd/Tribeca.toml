@@ -1,0 +1,74 @@
+# .config/mainnet/ggatd/Tribeca.toml
+
+[governance]
+network = "mainnet-beta" # Network on which the DAO is registered i.e. devnet or mainnet-beta
+slug = "ggatd" # Short name for the DAO
+name = "GGA Test DAO" # Name of the DAO
+address = "FQFoGJR3maMmgsZMoerEXKsHNWSc3uhMgqRheDXQu7EF" # Governor address
+description = "Test DAO for GGA"
+
+[governance.token]
+address = "CEZCH6PZjUw8RXfhsS8vSo4wGeoMMhAyzaFWHpXp3tRn" # Address of the governance token
+name = "GGA DAO Test Token" # Name of the governance token
+symbol = "GGADTT" # Symbol of the governance token
+decimals = 8 # Number of decimals of the governance token
+logoURI = "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/CEZCH6PZjUw8RXfhsS8vSo4wGeoMMhAyzaFWHpXp3tRn/logo.png" # URI of the logo image of the governance token
+description = "General parameters for the governance token used for the DAO"
+
+[governance.parameters.governor]
+quorum-votes = 4_000_000_00000000 # The required minimum number of votes (veGGADTT) for a proposal to make the voting proceeding valid : 4M veGGADTT / 400k GGADTT
+token-mint = "CEZCH6PZjUw8RXfhsS8vSo4wGeoMMhAyzaFWHpXp3tRn" # Address of the governance token (GGADTT)
+voting-delay = 86_400 # The number of seconds to wait before voting on a proposal may begin : 24h
+voting-period = 259_200 # The duration of voting on a proposal, in seconds : 3 days.
+timelock-delay = 86_400 # Time delay in seconds from which a proposal's transaction can be executed after it has been queued : 24h
+description = "The general governance parameters for voting on a proposal"
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10 # Maximum multiplier that would apply if token is locked in voter escrow for Max Vote Duration; veGGADTT balance = max-stake-vote-multiplier x GGADTT balance for max-stake-duration. A user’s veGGADTT balance decays linearly as the remaining time until the token unlock decreases
+min-stake-duration = 86_400 # The minimum time possible in seconds during which governance tokens are locked in the Voting Escrow Locker : 1 day
+max-stake-duration = 157_680_000 # # The maximum time possible in seconds during which governance tokens are locked in the Voting Escrow Locker : 5 years
+proposal-activation-min-votes = 100_000_00000000 # Number of votes a user needs to move a proposal from the draft phase to the active voting phase. : 100K veGGADTT / 10K GGADTT
+# whitelist-enabled = true
+description = "General governance parameters for the Voting Escrow Locker."
+
+[site]
+aliases = ["dao.gargantuaindustries.com"] # Alias for the DAO to connect to a custom domain
+
+[addresses]
+governor = "FQFoGJR3maMmgsZMoerEXKsHNWSc3uhMgqRheDXQu7EF" # Governor address.
+electorate = "GBcrkpG6Za6nMFBMRtJqMJSrdGTaHSMRsprBQjrUSUZ7" # Electorate address. The Electorate is an account which controls the Governor.
+
+[addresses.smart-wallet]
+label = "Smart Wallet"
+type = "smart-wallet"
+address = "76LNjYf477Fv6wzwcw3sV94G967je4Ps7bWHe1G3RzEx"
+description = "Multisig Solana wallet with Timelock capabilities which is used for execution."
+
+[addresses.executive-council]
+label = "Executive Council"
+type = "smart-wallet"
+address = "3Lpz6sCRaqAsuhX2e2Lg2WeDzyJoZWzdhwtnw9UQRr6r"
+description = "A group of trusted individuals specified in a Smart Wallet which sign via an Owner Invoker."
+
+[addresses.emergency-dao]
+label = "Emergency DAO"
+type = "smart-wallet"
+address = "7vZ3nVQZKAaWCJEgHYHEhqpQEJKGYYrVZ1Qc6yC2eEnB"
+description = "Multisig which can override the vote governance process in case of emergency."
+
+[proposals]
+notice = """\
+To create a proposal, first make a post on the [GGA Discord](https://discord.gg/k3UtYYzcvu).
+Once you have determined that there is sufficient community support,
+add the link to the discussion thread and create a proposal.
+"""
+discussion = { required = true, link = "https://discord.gg/k3UtYYzcvu", prefix = "https://discord.gg/k3UtYYzcvu/" }
+
+[links]
+website = "https://www.gargantuaindustries.com"
+discord = "https://discord.gg/GQXjkzHwVH"
+twitter = "https://twitter.com/Gargantua_Inds"
+youtube = "https://www.youtube.com/channel/UCOmeiHRH84Arqb9z4u5wshg"
+instagram = "https://www.instagram.com/gargantua_industries"
+telegram = "https://t.me/Gargantua_Industries"
+
