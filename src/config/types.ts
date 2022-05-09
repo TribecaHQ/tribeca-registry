@@ -85,10 +85,25 @@ export interface SAVEConfig {
   duration: number;
 }
 
+/**
+ * Marinade's locker contract to vote by NFTs
+ */
 export interface MndeNftLockerConfig {
+  /**
+   * Address of the locker .
+   */
   address: PublicKey;
+  /**
+   * Valid creators for the voting NFTs.
+   */
   creators: PublicKey[];
+  /**
+   * Link to appropriate docs.
+   */
   docs: string;
+  /**
+   * Link to NFT minting app.
+   */
   app: string;
 }
 
