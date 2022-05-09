@@ -85,11 +85,48 @@ export interface SAVEConfig {
   duration: number;
 }
 
+/**
+ * Marinade's locker contract to vote by NFTs
+ */
 export interface MndeNftLockerConfig {
+  /**
+   * Address of the locker .
+   */
   address: PublicKey;
+  /**
+   * Valid creators for the voting NFTs.
+   */
   creators: PublicKey[];
+  /**
+   * Link to appropriate docs.
+   */
   docs: string;
+  /**
+   * Link to NFT minting app.
+   */
   app: string;
+}
+
+/**
+ * Gauge system to be used with the NFT locker.
+ */
+export interface NftLockerGauge {
+  /**
+   * Name of the gauges type.
+   */
+  label: string;
+  /**
+   * Address of the gaugemeister.
+   */
+  address: PublicKey;
+  /**
+   * Address of the state account.
+   */
+  stateAccount: PublicKey;
+  /**
+   * Link to gauges docs.
+   */
+  docs: string;
 }
 
 /**
@@ -179,6 +216,10 @@ export interface GovernorConfig {
    * Token voter configutation.
    */
   mndeNftLocker?: MndeNftLockerConfig;
+  /**
+   * Nft locker gauges.
+   */
+  nftLockerGauges?: NftLockerGauge[];
 
   /**
    * Settings for minting tokens as the DAO. Enabling this allows DAO members to create "mint" proposals which can be used for grants.
