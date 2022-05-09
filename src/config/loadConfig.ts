@@ -37,6 +37,7 @@ export interface GovernorConfigJSON
     | "minter"
     | "gauge"
     | "mndeNftLocker"
+    | "nftLockerGauges"
     | "addresses"
   > {
   address: string;
@@ -69,6 +70,12 @@ export interface GovernorConfigJSON
     docs: string;
     app: string;
   };
+  nftLockerGauges?: {
+    label: string;
+    address: string;
+    stateAccount: string;
+    docs: string;
+  }[];
   addresses?: Record<string, TrackedAccountInfoJSON>;
 }
 
@@ -109,6 +116,7 @@ export const loadGovernorConfig = ({
   minter,
   gauge,
   mndeNftLocker,
+  nftLockerGauges,
   addresses,
   ...rest
 }: GovernorConfigJSON): GovernorConfig => {
@@ -153,6 +161,15 @@ export const loadGovernorConfig = ({
           address: new PublicKey(mndeNftLocker.address),
           creators: mndeNftLocker.creators.map((c) => new PublicKey(c)),
         }
+      : undefined,
+    nftLockerGauges: nftLockerGauges
+      ? nftLockerGauges.map((gaugeType) => {
+          return {
+            ...gaugeType,
+            address: new PublicKey(gaugeType.address),
+            stateAccount: new PublicKey(gaugeType.stateAccount),
+          };
+        })
       : undefined,
     ...rest,
     addresses: addresses ? loadTrackedAccountInfo(addresses) : undefined,

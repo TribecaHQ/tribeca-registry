@@ -108,6 +108,28 @@ export interface MndeNftLockerConfig {
 }
 
 /**
+ * Gauge system to be used with the NFT locker.
+ */
+export interface NftLockerGauge {
+  /**
+   * Name of the gauges type.
+   */
+  label: string;
+  /**
+   * Address of the gaugemeister.
+   */
+  address: PublicKey;
+  /**
+   * Address of the state account.
+   */
+  stateAccount: PublicKey;
+  /**
+   * Link to gauges docs.
+   */
+  docs: string;
+}
+
+/**
  * Iterable list of {@link AddressType}s.
  */
 export const ADDRESS_TYPES = ["smart-wallet"] as const;
@@ -194,6 +216,10 @@ export interface GovernorConfig {
    * Token voter configutation.
    */
   mndeNftLocker?: MndeNftLockerConfig;
+  /**
+   * Nft locker gauges.
+   */
+  nftLockerGauges?: NftLockerGauge[];
 
   /**
    * Settings for minting tokens as the DAO. Enabling this allows DAO members to create "mint" proposals which can be used for grants.

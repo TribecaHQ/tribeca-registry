@@ -10,6 +10,7 @@ import type {
   GovernanceConfig,
   GovernorConfig,
   MndeNftLockerConfig,
+  NftLockerGauge,
   QuarryConfig,
   SAVEConfig,
 } from "../config/types";
@@ -19,6 +20,7 @@ import type {
   GovernanceRaw,
   GovernorConfigRaw,
   mndeNftLockerRaw,
+  NftLockerGaugeRaw,
   QuarryRaw,
   SAVERaw,
 } from "./types";
@@ -146,6 +148,18 @@ const parseMndeNftLocker = ({
   app,
 });
 
+const parseNftLockerGauges = ({
+  label,
+  address,
+  stateAccount,
+  docs,
+}: NftLockerGaugeRaw): NftLockerGauge => ({
+  label,
+  address: new PublicKey(address),
+  stateAccount: new PublicKey(stateAccount),
+  docs,
+});
+
 /**
  * Parses the raw configuration of a Governor into something more useful.
  *
@@ -164,6 +178,11 @@ export const parseGovernorConfig = async (
   const quarry = raw.quarry ? parseQuarry(raw.quarry) : undefined;
   const mndeNftLocker = raw["mnde-nft-locker"]
     ? parseMndeNftLocker(raw["mnde-nft-locker"])
+    : undefined;
+  const nftLockerGauges = raw["nft-locker-gauges"]
+    ? raw["nft-locker-gauges"].map((rawGaugeType) =>
+        parseNftLockerGauges(rawGaugeType)
+      )
     : undefined;
 
   return {
@@ -191,6 +210,7 @@ export const parseGovernorConfig = async (
         }
       : undefined,
     mndeNftLocker,
+    nftLockerGauges,
     links: raw.links
       ? mapValues(raw.links, (link, key) => {
           if (typeof link === "string") {

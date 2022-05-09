@@ -155,6 +155,13 @@ export interface mndeNftLockerRaw {
   app: string;
 }
 
+export interface NftLockerGaugeRaw {
+  label: string;
+  address: string;
+  stateAccount: string;
+  docs: string;
+}
+
 /**
  * Raw JSON representation of the configuration of a Governor.
  */
@@ -171,9 +178,13 @@ export interface GovernorConfigRaw extends GovernanceConfigDeprecatedRaw {
    */
   quarry?: QuarryRaw;
   /**
-   * Token voter configuration.
+   * Nft locker configuration.
    */
   ["mnde-nft-locker"]?: mndeNftLockerRaw;
+  /**
+   * Nft locker gauges.
+   */
+  ["nft-locker-gauges"]?: NftLockerGaugeRaw[];
   /**
    * Various links.
    */
