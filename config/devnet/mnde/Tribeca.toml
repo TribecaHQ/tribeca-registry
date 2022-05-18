@@ -21,7 +21,7 @@ app = "https://dev.marinade.finance/app/mnde"
 [[nft-locker-gauges]]
 label = "Validator"
 docs = "https://docs.marinade.finance/governance/gauges"
-address = "F96CWJKiJGbEmzHBByiPpRAMxsXyD7e4bALpaEaEjhE8"
+address = "mvgmBamY7hDWxLNGLshMoZn8nt2P8tKnKhaBeXMVajZ"
 stateAccount = "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC"
 
 [proposals]
