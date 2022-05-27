@@ -62,9 +62,7 @@ To create a proposal, first make a post on the [GGA Discord](https://discord.gg/
 Once you have determined that there is sufficient community support,
 add the link to the discussion thread and create a proposal.
 """
-
 discussion = { required = true, link = "https://discord.com/channels/886489194967474206/979831643470704680/", prefix = "https://discord.com/channels/886489194967474206/979831643470704680/" }
-
 
 [links]
 website = "https://www.gargantuaindustries.com"
