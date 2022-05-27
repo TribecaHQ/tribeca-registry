@@ -18,6 +18,12 @@ creators = ["6jG2QcwaJPFS8Y9SzgH2kfKPj6ERhLi9RVtH8kRahj4j"]
 docs = "https://docs.marinade.finance/governance"
 app = "https://dev.marinade.finance/app/mnde"
 
+[[nft-locker-gauges]]
+label = "Validator"
+docs = "https://docs.marinade.finance/governance/gauges"
+address = "mvgmBamY7hDWxLNGLshMoZn8nt2P8tKnKhaBeXMVajZ"
+stateAccount = "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC"
+
 [proposals]
 notice = """\
 To create a proposal, first make a post on the [Marinade Governance Forum](https://forum.marinade.finance/).\n\n
