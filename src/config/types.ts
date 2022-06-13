@@ -122,7 +122,7 @@ export interface NftLockerGauge {
   /**
    * Address of the state account.
    */
-  stateAccount: PublicKey;
+  stateAccount?: PublicKey;
   /**
    * Link to gauges docs.
    */
