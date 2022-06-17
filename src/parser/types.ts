@@ -158,7 +158,7 @@ export interface mndeNftLockerRaw {
 export interface NftLockerGaugeRaw {
   label: string;
   address: string;
-  stateAccount: string;
+  stateAccount?: string;
   docs: string;
 }
 
