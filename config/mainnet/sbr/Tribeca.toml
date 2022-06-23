@@ -47,17 +47,17 @@ address = "F9TxY3Bj1tWebTHZPJC323WK8KwAe3W6XKkg2hzCdsKM"
 
 [proposals]
 notice = """\
-To create a proposal, first make a post on the [Saber Governance Forum](https://gov.saber.so/c/governance/6).
+To create a proposal, first make a post on the [Saber Governance Forum](https://github.com/saber-hq/governance/labels/proposal).
 
 Once you have determined that there is sufficient community support,
 add the link to the discussion thread and create a proposal.
 """
-discussion = { required = true, link = "https://gov.saber.so/c/governance/6", prefix = "https://gov.saber.so/t/" }
+discussion = { required = true, link = "https://github.com/saber-hq/governance/labels/proposal", prefix = "https://github.com/saber-hq/governance/issues/" }
 
 [links]
 website = "https://saber.so"
 app = "https://app.saber.so"
-forum = "https://gov.saber.so"
+forum = "https://github.com/saber-hq/governance/discussions/"
 discord = "https://chat.saber.so"
 github = "https://github.com/saber-hq"
 medium = "https://blog.saber.so"
