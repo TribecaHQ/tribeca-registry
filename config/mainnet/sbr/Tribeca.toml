@@ -47,7 +47,7 @@ address = "F9TxY3Bj1tWebTHZPJC323WK8KwAe3W6XKkg2hzCdsKM"
 
 [proposals]
 notice = """\
-To create a proposal, first make a post on the [Saber Governance Forum](https://github.com/saber-hq/governance/labels/proposal).
+To create a proposal, first make a proposal on the [Saber Governance Forum](https://github.com/saber-hq/governance/issues/new?assignees=&labels=proposal&template=governance-proposal.md&title=%5BPROPOSAL%5D).
 
 Once you have determined that there is sufficient community support,
 add the link to the discussion thread and create a proposal.
