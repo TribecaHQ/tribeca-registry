@@ -2,7 +2,6 @@
   "extends": "@saberhq/tsconfig/tsconfig.lib.json",
   "compilerOptions": {
     "allowJs": true,
-    "resolveJsonModule": true,
     "noEmit": true
   },
   "include": ["./src/", "./data"]
