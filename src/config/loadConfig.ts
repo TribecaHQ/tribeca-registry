@@ -73,7 +73,7 @@ export interface GovernorConfigJSON
   nftLockerGauges?: {
     label: string;
     address: string;
-    stateAccount: string;
+    stateAccount?: string;
     docs: string;
   }[];
   addresses?: Record<string, TrackedAccountInfoJSON>;
@@ -167,7 +167,9 @@ export const loadGovernorConfig = ({
           return {
             ...gaugeType,
             address: new PublicKey(gaugeType.address),
-            stateAccount: new PublicKey(gaugeType.stateAccount),
+            stateAccount: gaugeType.stateAccount
+              ? new PublicKey(gaugeType.stateAccount)
+              : undefined,
           };
         })
       : undefined,

@@ -156,7 +156,7 @@ const parseNftLockerGauges = ({
 }: NftLockerGaugeRaw): NftLockerGauge => ({
   label,
   address: new PublicKey(address),
-  stateAccount: new PublicKey(stateAccount),
+  stateAccount: stateAccount ? new PublicKey(stateAccount) : undefined,
   docs,
 });
 
