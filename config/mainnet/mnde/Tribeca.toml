@@ -27,6 +27,11 @@ docs = "https://docs.marinade.finance/governance"
 app = "https://marinade.finance/app/mnde"
 
 [[nft-locker-gauges]]
+label = "Liquidity"
+docs = "https://docs.marinade.finance/governance/gauges"
+address = "7Er1bdJU1Rd5ZuXctcp8BjnZkGQGVJT6gX46pcvqhXKT"
+
+[[nft-locker-gauges]]
 label = "Validator"
 docs = "https://docs.marinade.finance/governance/gauges"
 address = "mvgmBamY7hDWxLNGLshMoZn8nt2P8tKnKhaBeXMVajZ"
