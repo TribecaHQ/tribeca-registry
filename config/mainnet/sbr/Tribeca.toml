@@ -52,7 +52,7 @@ To create a proposal, first make a post on the [Saber Governance Forum](https://
 Once you have determined that there is sufficient community support,
 add the link to the discussion thread and create a proposal.
 """
-discussion = { required = true, link = "https://github.com/saber-hq/governance/labels/proposal", prefix = "https://github.com/saber-hq/governance/issues/" }
+discussion = { required = true, link = "https://github.com/saber-hq/governance/issues/new?assignees=&labels=proposal&template=governance-proposal.md&title=%5BPROPOSAL%5D", prefix = "https://github.com/saber-hq/governance/issues/" }
 
 [links]
 website = "https://saber.so"
