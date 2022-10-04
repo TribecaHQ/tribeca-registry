@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { mapValues } from "lodash";
+import { mapValues } from "lodash-es";
 
 import type {
   GovernanceConfig,

@@ -2,7 +2,7 @@ import type { TokenInfo } from "@saberhq/token-utils";
 import { chainIdToNetwork, networkToChainId } from "@saberhq/token-utils";
 import type { Cluster } from "@solana/web3.js";
 import { PublicKey } from "@solana/web3.js";
-import { mapValues, startCase } from "lodash";
+import { mapValues, startCase } from "lodash-es";
 import invariant from "tiny-invariant";
 
 import type {
