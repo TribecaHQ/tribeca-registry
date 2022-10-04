@@ -1,2 +1,2 @@
-export * from "./config";
-export * from "./constants";
+export * from "./config/index.js";
+export * from "./constants.js";

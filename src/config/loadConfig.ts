@@ -8,7 +8,7 @@ import type {
   LockerParameters,
   QuarryConfig,
   TrackedAccountInfo,
-} from "./types";
+} from "./types.js";
 
 type QuarryConfigJSON = Omit<
   QuarryConfig,

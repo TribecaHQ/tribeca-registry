@@ -2,11 +2,11 @@ import { formatNetwork } from "@saberhq/solana-contrib";
 import * as fs from "fs/promises";
 import * as toml from "toml";
 
-import type { GovernorConfig } from "../config/types";
-import { parseGovernorConfig } from "../parser/parse";
-import type { GovernorConfigRaw } from "../parser/types";
-import { validateConfig } from "../parser/validate";
-import { stableStringify } from "../utils/serialize";
+import type { GovernorConfig } from "../config/types.js";
+import { parseGovernorConfig } from "../parser/parse.js";
+import type { GovernorConfigRaw } from "../parser/types.js";
+import { validateConfig } from "../parser/validate.js";
+import { stableStringify } from "../utils/serialize.js";
 
 function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
   return value !== null && value !== undefined;
