@@ -1,8 +1,8 @@
 import type { TokenList } from "@saberhq/token-utils";
-import axios from "axios";
+import fetch from "cross-fetch";
 import * as fs from "fs/promises";
 
-import { stableStringify } from "../utils/serialize";
+import { stableStringify } from "../utils/serialize.js";
 
 const TOKEN_LIST = `https://github.com/CLBExchange/certified-token-list/blob/master/token-list.json?raw=true`;
 
@@ -10,7 +10,8 @@ const TOKEN_LIST = `https://github.com/CLBExchange/certified-token-list/blob/mas
  * Fetches the token list from GitHub.
  */
 const fetchTokens = async (): Promise<void> => {
-  const { data: allTokens } = await axios.get<TokenList>(TOKEN_LIST);
+  const result = await fetch(TOKEN_LIST);
+  const allTokens = (await result.json()) as TokenList;
   await fs.writeFile(
     `${__dirname}/../../solana-token-list.json`,
     stableStringify(allTokens)

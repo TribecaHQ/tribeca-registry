@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { mapValues } from "lodash-es";
+import { mapValues } from "lodash";
 
 import type {
   GovernanceConfig,
@@ -8,7 +8,7 @@ import type {
   LockerParameters,
   QuarryConfig,
   TrackedAccountInfo,
-} from "./types";
+} from "./types.js";
 
 type QuarryConfigJSON = Omit<
   QuarryConfig,

@@ -2,7 +2,7 @@ import type { TokenInfo } from "@saberhq/token-utils";
 import { u64 } from "@saberhq/token-utils";
 import type { PublicKey } from "@solana/web3.js";
 
-import type { GovernanceRaw } from "../parser/types";
+import type { GovernanceRaw } from "../parser/types.js";
 
 export class TokenQuantity extends u64 {
   override toJSON(): string {

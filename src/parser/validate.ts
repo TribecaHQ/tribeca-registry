@@ -1,7 +1,7 @@
 import type { TokenInfo } from "@saberhq/token-utils";
 
-import type { GovernorConfig } from "../config/types";
-import { DESCRIPTION_CHARACTER_LIMIT } from "../constants";
+import type { GovernorConfig } from "../config/types.js";
+import { DESCRIPTION_CHARACTER_LIMIT } from "../constants.js";
 
 export const validateTokenInfo = ({
   address,

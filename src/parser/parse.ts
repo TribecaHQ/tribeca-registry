@@ -2,7 +2,7 @@ import type { TokenInfo } from "@saberhq/token-utils";
 import { chainIdToNetwork, networkToChainId } from "@saberhq/token-utils";
 import type { Cluster } from "@solana/web3.js";
 import { PublicKey } from "@solana/web3.js";
-import { mapValues, startCase } from "lodash-es";
+import { mapValues, startCase } from "lodash";
 import invariant from "tiny-invariant";
 
 import type {
@@ -13,9 +13,9 @@ import type {
   NftLockerGauge,
   QuarryConfig,
   SAVEConfig,
-} from "../config/types";
-import { ADDRESS_TYPES, TokenQuantity } from "../config/types";
-import { getTokenInfo } from "../utils/getTokenInfo";
+} from "../config/types.js";
+import { ADDRESS_TYPES, TokenQuantity } from "../config/types.js";
+import { getTokenInfo } from "../utils/getTokenInfo.js";
 import type {
   GovernanceRaw,
   GovernorConfigRaw,
@@ -23,8 +23,8 @@ import type {
   NftLockerGaugeRaw,
   QuarryRaw,
   SAVERaw,
-} from "./types";
-import { validateTokenInfo } from "./validate";
+} from "./types.js";
+import { validateTokenInfo } from "./validate.js";
 
 const parseGovernance = async ({
   slug,

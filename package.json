@@ -7,6 +7,12 @@
     "tribeca",
     "governance"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "repository": "git@github.com:TribecaHQ/tribeca-registry.git",
@@ -31,10 +37,8 @@
     "@types/bn.js": "^5.1.1",
     "@types/eslint": "^8.4.6",
     "@types/lodash": "^4.14.186",
-    "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.8.2",
     "@types/prettier": "^2.7.1",
-    "axios": "^0.27.2",
     "bn.js": "^5.2.1",
     "eslint": "^8.24.0",
     "eslint-import-resolver-node": "^0.3.6",
@@ -48,9 +52,9 @@
   },
   "scripts": {
     "build": "tsc -P tsconfig.build.json && tsc -P tsconfig.esm.json",
-    "generate": "mkdir -p data/registry && cp -R static/* data/ && npm run generate:solana-token-list && npm run generate:governor-metas",
-    "generate:solana-token-list": "ts-node src/scripts/generateTokenList.ts",
-    "generate:governor-metas": "ts-node src/scripts/generateGovernorMetas.ts",
+    "generate": "mkdir -p data/registry && cp -R static/* data/ && npm run build && npm run generate:solana-token-list && npm run generate:governor-metas",
+    "generate:solana-token-list": "node dist/cjs/scripts/generateTokenList.js",
+    "generate:governor-metas": "node dist/cjs/scripts/generateGovernorMetas.js",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
     "prepare": "husky install"
@@ -60,7 +64,8 @@
     "*.{md,json,js,yml,yaml,html}": "prettier --write"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21",
+    "cross-fetch": "^3.1.5",
+    "lodash": "^4.17.21",
     "tiny-invariant": "^1.3.1",
     "toml": "^3.0.0",
     "tslib": "^2.4.0"
