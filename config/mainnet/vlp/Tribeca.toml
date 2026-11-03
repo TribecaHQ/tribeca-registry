@@ -1,9 +1,11 @@
+# Locker only: VLP can be locked, but there is no active governance.
+# The governor exists because the locker requires one, but proposals cannot be executed.
 [governance]
 network = "mainnet-beta"
 slug = "vlp"
 name = "Vault Unstake Pool"
 address = "5F9MwCoWiLEqmZgstp8o5iobCT7JZZNKm62raghS9CEU"
-description = "Lock VLP from The Vault's liquid unstake pool on Solana"
+description = "Lock VLP from The Vault's unstake pool. Locker only, no governance."
 icon-url = "https://node1.irys.xyz/J7SJpgXrG5RFtbjW13lMHovizF8Lf9rZJ8rhjctWhkM"
 
 [governance.token]
@@ -13,13 +15,6 @@ symbol = "VLP"
 decimals = 9
 logoURI = "https://node1.irys.xyz/J7SJpgXrG5RFtbjW13lMHovizF8Lf9rZJ8rhjctWhkM"
 
-[governance.parameters.governor]
-quorum-votes = 0
-token-mint = "EUWoTx5vQQrxaDFdeK2PLUVbnmRWjw4x6sBbmcxBaHjF"
-voting-delay = 0
-voting-period = 86_400 # 1 day
-timelock-delay = 0
-
 [governance.parameters.locker]
 max-stake-vote-multiplier = 10
 min-stake-duration = 0
@@ -27,15 +22,14 @@ max-stake-duration = 126_144_000 # 4 years
 proposal-activation-min-votes = 0
 whitelist-enabled = false
 
-# DAO addresses to track.
-[addresses]
-governor = "5F9MwCoWiLEqmZgstp8o5iobCT7JZZNKm62raghS9CEU"
-locker = "3UhGsximz6vjUCakKYWHGeZfRhyeUDVbw2jEnoqXrBDr"
+[proposals]
+notice = """\
+This is a locker only. VLP holders can lock VLP here, but there is no active governance \
+and proposals will not be executed.
+"""
 
-[addresses.smart-wallet]
-label = "Smart Wallet"
-type = "smart-wallet"
-address = "Eqpof5uJnVa2omjppHCkrbfzwCX8Pg16FaRWatoypYDQ"
+[addresses]
+locker = "3UhGsximz6vjUCakKYWHGeZfRhyeUDVbw2jEnoqXrBDr"
 
 [links]
 website = "https://thevault.finance"
