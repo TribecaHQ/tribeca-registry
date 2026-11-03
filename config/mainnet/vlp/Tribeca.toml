@@ -1,0 +1,39 @@
+# Locker only: VLP can be locked, but there is no active governance.
+# The governor exists because the locker requires one, but proposals cannot be executed.
+[governance]
+network = "mainnet-beta"
+slug = "vlp"
+name = "Vault Unstake Pool"
+address = "5F9MwCoWiLEqmZgstp8o5iobCT7JZZNKm62raghS9CEU"
+description = "Lock VLP from The Vault's unstake pool. Locker only, no governance."
+icon-url = "https://node1.irys.xyz/J7SJpgXrG5RFtbjW13lMHovizF8Lf9rZJ8rhjctWhkM"
+
+[governance.token]
+address = "EUWoTx5vQQrxaDFdeK2PLUVbnmRWjw4x6sBbmcxBaHjF"
+name = "Vault Unstake LP"
+symbol = "VLP"
+decimals = 9
+logoURI = "https://node1.irys.xyz/J7SJpgXrG5RFtbjW13lMHovizF8Lf9rZJ8rhjctWhkM"
+
+[governance.parameters.locker]
+max-stake-vote-multiplier = 10
+min-stake-duration = 0
+max-stake-duration = 126_144_000 # 4 years
+proposal-activation-min-votes = 0
+whitelist-enabled = false
+
+[proposals]
+notice = """\
+This is a locker only. VLP holders can lock VLP here, but there is no active governance \
+and proposals will not be executed.
+"""
+
+[addresses]
+locker = "3UhGsximz6vjUCakKYWHGeZfRhyeUDVbw2jEnoqXrBDr"
+
+[links]
+website = "https://thevault.finance"
+app = "https://thevault.finance/unstake-pool"
+docs = "https://docs.thevault.finance"
+discord = "https://discord.gg/aQC53CGgQY"
+twitter = "https://twitter.com/thevaultfinance"
